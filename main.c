@@ -2,6 +2,9 @@
 #include <stdio.h>
 
 int sum(int, int);
+int min(int num1, int num2);
+
+
 
 int main()
 {
@@ -18,4 +21,10 @@ int main()
 int sum(int num1, int num2)
 {
 	return num1 + num2;
+}
+
+
+int min(int num1, int num2)
+{
+	return num1-num2;
 }
