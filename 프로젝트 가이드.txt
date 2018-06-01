@@ -1,13 +1,22 @@
+[비추]와 [추천] 에 대한 설명
+해당 기능을 사용하는데 여러 방법이 있는데
+추천에 적힌 방법을 권유한다는 것.
+
+
+
 <SQL 내보내기 / 가져오기>
 
 1. 만약 '오픈소스' 라는 DB를 내보내고 싶다면, cmd에서 다음처럼
 
-mysqldump -u root -p 오픈소스 > C:\Users\Dyllis\Desktop\원하는이름.sql 
+
+[비추] mysqldump -u root -p 오픈소스 > C:\Users\Dyllis\Desktop\원하는이름.sql 
+[추천] mysqldump -u root -p 오픈소스 > C:\Users\Dyllis\Desktop\원하는이름.txt
 => 뒤에 경로는 바탕화면으로 두는게 편함
 
 
 2. DB를 가져올 때,
-mysqldump -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\ProjectDb.sql
+[비추] mysqldump -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\ProjectDb.sql
+[추천] mysqldump -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\ProjectDb.txt
 
 	<만약 1049 Error가 나온다면>
 기존에 누군가 백업한 DB를 가져오기 위해선, 서버에 동일한 명의 DB가 있어야한다.
