@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>'C' Library Academy</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/mainpage.css">
-    <style type = "text/css">
-      table {
-        border:0;
-        border-collapse : collapse;
-        border-spacing : 0;
-      }
-      table td, table th{
-        border : 1px, solid;
-        padding : 2px 5px 2px 5px;
-      }
-      .text-center {text-align: center;}
-      .text-right {text-align : right; }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>'C' Library Academy</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/mainpage.css">
+    </head>
+<!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
+
+
+
+<body>
+    <style type="text/css">
+        .jumbotron {
+            background-image: url('images/jumbotron.jpg');
+            background-size: cover;
+            text-shadow: black 0.2em 0.2em 0.2em;
+            color: white;
+
+        }
+        .selectlist{
+          right : 0;
+          left : auto;
+        }
     </style>
-  </head>
-  <body>
+<!-- 위와 같은 선언은 내부 CSS 선언이라고함
+대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -41,7 +48,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/beginList.html">초급자</a></li>
+                            <li><a href="#">초급자</a></li>
                             <li><a href="#">중급자</a></li>
                             <li><a href="#">고급자</a></li>
                         </ul>
@@ -69,30 +76,18 @@
         </div>
     </nav>
     <section>
-      <article>
-    <?php
-      $function = $_POST['searchterm'];
-      $conn = mysqli_connect('localhost', 'root', 'root12', 'oss');
-      if ( !$conn ) die('DB Error');
-        mysqli_query($conn, 'set session character_set_connection=utf8;');
-        mysqli_query($conn, 'set session character_set_results=utf8;');
-        mysqli_query($conn, 'set session character_set_client=utf8;');
 
-        $query = "select * from function where funcName = '$function'";
-        $result = mysqli_query($conn, $query);
-        echo '<table class="text-center"><tr>' .
-                '<th>이름</th><th>헤더</th><th>설명</th>' .
-                '</tr>';
-        while( $row = mysqli_fetch_array($result) ) {
-              echo '<tr><td>' . $row['funcName'] . '</td>' .
-                  '<td>' . $row['head'] . '</td>' .
-                  '<td class="text-right">' . $row['beginExplain'] . '</td></tr>';
-                    }
-                    echo '</table>';
-                       mysqli_close($conn);
-       ?>
-     </article>
-     </section>
+    </section>
+    <aside>
+      <label>
+        <form class = "selectlist" name="selectlist">
+          <ul>
+              <label>  <input type ="radio" name = "list" value = "funcName" checked="checked" /> 함수로 보기</label>
+              <label><input type ="radio" name = "list" value = "head" /> 헤더로 보기</label>
+          </ul>
+        </form>
+    </aside>
+
     <footer style="background-color: #000000; color: #ffffff">
         <div class="container"
             <br>
