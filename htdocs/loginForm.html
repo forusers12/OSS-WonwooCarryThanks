@@ -125,7 +125,14 @@
     											</div>
     										</div>
     									</div>
-    								</form>
+    								</form>                                    
+                                    <!-- name은 변수고, value 속성을 사용하지 않아도, 해당 위젯에 입력 후, 최종 폼 클릭시 보내지는 원리인듯.
+                                    method는 포스트방식으로 보내겠다는거고
+                                    Q) 포스트방식
+                                =>Get방식 별다른 노력없이 해킹같은 행위가 가능하지만,
+                                POST는 URL에 표시되지 않는다. 어쨌든 POST도 보안에 취약하므로 둘다 보안처리를 해야한다고 함.
+                                그냥 프로토콜이라 생각하면 되겠네. -->
+
     								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
     									<div class="form-group">
     										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="아이디" value="">
