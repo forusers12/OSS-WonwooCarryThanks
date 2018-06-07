@@ -1,3 +1,7 @@
+<?php
+include("./login/loginserv.php");
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -98,9 +102,11 @@
     					<div class="panel-body">
     						<div class="row">
     							<div class="col-lg-12">
-    								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                    <div class="login">
+
+    								<form id="login-form" action="" method="post" role="form" style="display: block;">
     									<div class="form-group">
-    										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="아이디" value="">
+    										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="아이디">
     									</div>
     									<div class="form-group">
     										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
@@ -112,7 +118,7 @@
     									<div class="form-group">
     										<div class="row">
     											<div class="col-sm-6 col-sm-offset-3">
-    												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="로그인">
+    												<input type="submit" name="submit" id="submit" tabindex="4" class="form-control btn btn-login" value="로그인">
     											</div>
     										</div>
     									</div>
@@ -125,7 +131,16 @@
     											</div>
     										</div>
     									</div>
+
     								</form>
+                    <div class="form-group">
+                      <div class="row">
+                        <div><?php echo $error; ?></div>
+
+                      </div>
+
+                    </div>
+                    </div>
     								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
     									<div class="form-group">
     										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="아이디" value="">
