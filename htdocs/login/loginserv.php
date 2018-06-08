@@ -31,8 +31,10 @@ if(isset($_POST['submit'])){
 
  $rows = mysqli_num_rows($query);
  if($rows == 1){
+   $_SESSION['is_login']=true;
+   $_SESSION['id'] = $_POST['id'];
 
- header("Location: ./index.html");
+ header("Location: ./index_session.html");
  }
  else
  {
