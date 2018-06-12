@@ -3,68 +3,80 @@
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 반응형웹, 모바일 사용시 해상도 자동조정 -->
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
-    <style type = "text/css">
-      table {
-        border:0;
-        border-collapse : collapse;
-        border-spacing : 0;
-      }
-      table td, table th{
-        border : 1px, solid;
-        padding : 2px 5px 2px 5px;
-      }
-      .text-center {text-align: center;}
-      .text-right {text-align : right; }
+    <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
+</head>
+
+
+
+
+<body>
+    <style type="text/css">
+        .jumbotron {
+            background-image: url('images/jumbotron.jpg');
+            background-size: cover;
+            text-shadow: black 0.2em 0.2em 0.2em;
+            /* 1em은 현재 폰트사이즈, 즉 2em은 현재 폰트사이즈의 2배
+            예를들어, 폰트사이즈가 10px이라면 2em은 20px의 크기를 차지한다.
+            Q) 왜 px냅두고 em단위를 사용하는가? */
+            color: white;
+        }
+
+        .media-object {
+            width: 150px;
+            height: auto;
+            /* auto로 설정하면 width의 크기를 따라간다 */
+        }
     </style>
-  </head>
-  <body>
+    <!-- 위와 같은 선언은 내부 CSS 선언이라고함
+대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
+
     <nav class="navbar navbar-default">
+        <!-- https://www.w3schools.com/bootstrap/bootstrap_navbar.asp 해당 사이트로 가면 부트스트랩 디자인에 대해 자세한 이해가능 -->
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index.html">'C' Academy</a>
+                <a class="navbar-brand" href="index.html">'C' Academy</a>
+                <!--홈으로 돌아가기 추가-->
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">소개<span class="sr-only"></span></a></li>
-                    <li><a href="#">강사진</a></li>
+                    <li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+                    <li><a href="instructor.html">강사진</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/beginList.html">초급자</a></li>
-                            <li><a href="#">중급자</a></li>
-                            <li><a href="#">고급자</a></li>
+                            <li><a href="lectureF">C</a></li>
+                            <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
                 </ul>
                 <!--검색 php 전달을 위한 문구 삽입
                 -->
-                <form class="navbar-form navbar-left" action ="func_list.php" method = "post">
+                <form class="navbar-form navbar-left" action="func_list.php" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" name = "searchterm" placeholder="내용을 입력하세요.">
+                        <input type="text" class="form-control" name="searchterm" placeholder="내용을 입력하세요.">
                     </div>
                     <button type="submit" class="btn btn-default">검색</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class=dropdown>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li><a href="loginForm.html">로그인</a></li>
+                            <li><a href="registerForm.html">회원가입</a></li>
                         </ul>
                     </li>
                 </ul>
