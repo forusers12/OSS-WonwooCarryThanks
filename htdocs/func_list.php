@@ -1,3 +1,6 @@
+<?php
+  include "db.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -69,28 +72,37 @@
         </div>
     </nav>
     <section>
-      <article>
-    <?php
-      $function = $_POST['searchterm'];
-      $conn = mysqli_connect('localhost', 'root', 'root12', 'oss');
-      if ( !$conn ) die('DB Error');
-        mysqli_query($conn, 'set session character_set_connection=utf8;');
-        mysqli_query($conn, 'set session character_set_results=utf8;');
-        mysqli_query($conn, 'set session character_set_client=utf8;');
-
-        $query = "select * from function where funcName = '$function'";
-        $result = mysqli_query($conn, $query);
-        echo '<table class="text-center"><tr>' .
-                '<th>이름</th><th>헤더</th><th>설명</th>' .
-                '</tr>';
-        while( $row = mysqli_fetch_array($result) ) {
-              echo '<tr><td>' . $row['funcName'] . '</td>' .
-                  '<td>' . $row['head'] . '</td>' .
-                  '<td class="text-right">' . $row['beginExplain'] . '</td></tr>';
-                    }
-                    echo '</table>';
-                       mysqli_close($conn);
-       ?>
+      <article><h1>검색결과</h1>
+      <h4>제목 검색</h4>
+      <table class="list-table">
+        <thead>
+            <tr>
+                <th width="120">함수명</th>
+                <th width = "120">헤더</th>
+                <th width = "500">기초 설명</th>
+             </tr>
+          </thead>
+       <?php
+       $function = $_POST['searchterm'];
+       $sql = mq("select * from function where funcName like '%$function%'");
+                   while( $row = $sql->fetch_array()) {
+                     $funcName = $row["funcName"];
+                     $num = $row["num"];
+                     $head = $row['head'];
+                     $beginEx = $row['beginExplain'];
+                     if(strlen($beginEx)>30){
+          $beginEx=str_replace($row["beginExplain"],mb_substr($row["beginExplain"],0,30,"utf-8")."...",$row["beginExplain"]);
+        }
+          ?>
+          <tbody>
+            <tr>
+          <td width="120"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+          <th width = "120"><?php echo $row['head'] ?></th>
+          <th width = "500"><?php echo $row['beginExplain'] ?></th>
+        </tr>
+        </tbody>
+        <?php } ?>
+      </table>
      </article>
      </section>
     <footer style="background-color: #000000; color: #ffffff">

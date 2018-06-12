@@ -1,3 +1,10 @@
+<?php
+include "db.php";
+
+header('Content-Type: text/html; charset=utf-8');
+
+	$bno = $_GET['head'];
+	?>
 <!DOCTYPE html>
 <html>
 
@@ -20,11 +27,12 @@
             text-shadow: black 0.2em 0.2em 0.2em;
             color: white;
         }
+
         .media-object {
             width: 150px;
             height: auto;
             /* auto로 설정하면 width의 크기를 따라간다 */
-}
+        }
     </style>
     <!-- 위와 같은 선언은 내부 CSS 선언이라고함
 대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
@@ -48,7 +56,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lectureF">C</a></li>
+                            <li><a href="lecture.html?lectureNameF">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -73,55 +81,47 @@
             </div>
         </div>
     </nav>
+    <h3>헤더</h3>
+    <div class="row"> <div class="col-sm-10"> 　</div>
+        <form name="selectlist" method="post">
+            <ul>
+                <div class="col-sm-2">
+                    <label><input type ="radio" name = "list" value = "funcName"  /><a href ="lectureF.php"> 함수로 보기</a></label>
+                    <label><input type ="radio" name = "list" value = "head" checked="checked"/><a href ="lectureH.php"> 헤더로 보기</a></label>
+                </div>
+            </ul>
+        </form>
+    </div>
+    <table class="list-table">
+      <thead>
+          <tr>
+              <th width="500"><?php echo $bno;?> 목록</th>
+           </tr>
+        </thead>
+     <?php
+     $sql = mq("select * from function where head ='".$bno."'");
+                 while( $row = $sql->fetch_array()) {
+                   $funcName = $row["funcName"];
+                   $num = $row["num"];
+        ?>
+        <tbody>
+          <tr>
+        <td width="500"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+      </tr>
+      </tbody>
+      <?php } ?>
+    </table>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center"> 'C' Library Academy </h1>
-            <p class="text-center"> 라이브러리 학습사이트 입니다. </p>
-            <p class="text-center"><a class="btn btn-primary btn-lg" href="lecture.html" role="button"> 강의 들으러 가기</a></p>
-        </div>
-    </div>
-    <div class="row">
-        <!-- row의 경우 한 줄에는 12 수의 영역을 가지며, md-2 md-4 같은 뒤에 수가 합이 12되면 라인이 꽉차게 된다. -->
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-            <h4>'C' Library 아카데미 특징</h4>
-            <p>저희 아카데미에서는 초급자, 중급자, 고급자 카테고리를 동시에 제공하고 있습니다.</p>
-            <p><a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히 알아보기</a></p>
-            <!-- data-toggle : 해당 속성값을 가진 id의 div를 보여준다.
-             ex) <div class="modal" id="modal" tabindex="-1"> 부분을 보여줌-->
-
-        </div>
-        <div class="col-md-4">
-            <h4>대학생구성 운영진</h4>
-            <p>운영진이 대학생이라, 학생들이 어려워 하는게 뭔지 공감할 수 있는 영역을 쉽게 설명해줍니다. </p>
-            <p><a class="btn btn-default" href="instructor.html">자세히 알아보기</a></p>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title"><span claa="glyphicon glyphicon-pencil"></span>
-                &nbsp;&nbsp;최신 강의 목록</h3>
-        </div>
-        <div class="panel-body">
-            <div class="media">
-                <div class="media-left">
-                    <a href="#"><img class="media-object" src="Images/C.jpg" alt="C언어 강의 이미지"></a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading"><a href="lecture.html?lectureName=C">C언어 기초 프로그래밍 강의</a>&nbsp;<span class="badge">New</span></h4> C언어 강의는 기초 프로그래밍 강의입니다.
-                </div>
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <albel>댓글: </label>
+                    <textarea class="form-control" rows="5" id="commentXnotent" name="commentContent"></textarea>
+                    <br>
+                    <button type="submit" class="btn pull-right">등록</button>
             </div>
-            <hr>
-            <div class="media">
-                <div class="media-left">
-                    <a href="lecture.html?lectureName=Java"><img class="media-object" src="Images/java.jpg" alt="Java 강의 이미지"></a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading"><a href="#">Java 기초 프로그래밍 강의</a>&nbsp;<span class="badge">New</span></h4> Java 강의는 기초 프로그래밍 강의입니다.
-                </div>
-            </div>
-        </div>
+        </form>
+        <hr>
     </div>
 
     <footer style="background-color: #000000; color: #ffffff">
