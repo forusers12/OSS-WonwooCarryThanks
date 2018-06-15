@@ -1,23 +1,18 @@
 <?php
-include("./login/loginserv.php");
-
+  include "db.php";
 ?>
 <!DOCTYPE html>
 <html>
-<?php
-session_start();
-if(isset($_SESSION['is_login'])){
-  header('Location: ./login/loginserv.php');
-}
-?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
-    <link rel="stylesheet" href="css/loginform.css">
+    <style type="text/css">
 
+    h3{color: green;}
 </head>
 <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 
@@ -38,8 +33,6 @@ if(isset($_SESSION['is_login'])){
             /* auto로 설정하면 width의 크기를 따라간다 */
         }
     </style>
-
-
     <!-- 위와 같은 선언은 내부 CSS 선언이라고함
 대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
 
@@ -62,7 +55,7 @@ if(isset($_SESSION['is_login'])){
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lecture.html?lectureName=C">C</a></li>
+                            <li><a href="lecture.html?lectureNameF">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -87,110 +80,49 @@ if(isset($_SESSION['is_login'])){
             </div>
         </div>
     </nav>
-
+    <h3>헤더</h3>
+    <div class="row"> <div class="col-sm-0"> 　</div>
+        <form name="selectlist" method="post">
+            <ul>
+                <div class="col-sm-2">
+                    <label><input type ="radio" name = "list" value = "funcName"  /><a href ="managerFunc.php"> 함수로 보기</a></label>
+                    <label><input type ="radio" name = "list" value = "head" checked="checked"/><a href ="managerHead.php"> 헤더로 보기</a></label>
+                </div>
+            </ul>
+        </form>
+    </div>
+    <table class="list-table">
+      <thead>
+          <tr>
+              <th width="500">헤더</th>
+           </tr>
+        </thead>
+     <?php
+     $sql = mq("select distinct head from function");
+                 while( $row = $sql->fetch_array()) {
+                   $head = $row["head"];
+        ?>
+        <tbody>
+          <tr>
+        <td width="500"><a href="managerPage.php?head=<?php echo $head; ?>"><?php echo $head;?></a></td>
+      </tr>
+      </tbody>
+      <?php } ?>
+      	<li><a href="management.php">추가</a></li>
+    </table>
 
     <div class="container">
-        	<div class="row">
-    			<div class="col-md-6 col-md-offset-3">
-    				<div class="panel panel-login">
-    					<div class="panel-heading">
-    						<div class="row">
-    							<div class="col-xs-6">
-    								<a href="#" class="active" id="login-form-link">로그인</a>
-    							</div>
-    							<div class="col-xs-6">
-    								<a href="#" id="register-form-link">회원가입</a>
-    							</div>
-    						</div>
-    						<hr>
-    					</div>
-    					<div class="panel-body">
-    						<div class="row">
-    							<div class="col-lg-12">
-                    <div class="login">
-
-    								<form id="login-form" action="" method="post" role="form" style="display: block;">
-    									<div class="form-group">
-    										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="아이디">
-    									</div>
-    									<div class="form-group">
-    										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
-    									</div>
-    									<div class="form-group text-center">
-    										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-    										<label for="remember"> 정보 유지</label>
-    									</div>
-    									<div class="form-group">
-    										<div class="row">
-    											<div class="col-sm-6 col-sm-offset-3">
-    												<input type="submit" name="submit" id="submit" tabindex="4" class="form-control btn btn-login" value="로그인">
-    											</div>
-    										</div>
-    									</div>
-    									<div class="form-group">
-    										<div class="row">
-    											<div class="col-lg-12">
-    												<div class="text-center">
-    													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">비밀번호 찾기</a>
-    												</div>
-    											</div>
-    										</div>
-    									</div>
-<<<<<<< HEAD
-
-    								</form>
-                    <div class="form-group">
-                      <div class="row">
-                        <div><?php echo $error; ?></div>
-
-                      </div>
-
-                    </div>
-                    </div>
-    								<form id="register-form" action="./login/signUp.php" method="post" role="form" style="display: none;">
-=======
-    								</form>
-                                    <!-- name은 변수고, value 속성을 사용하지 않아도, 해당 위젯에 입력 후, 최종 폼 클릭시 보내지는 원리인듯.
-                                    method는 포스트방식으로 보내겠다는거고
-                                    Q) 포스트방식
-                                =>Get방식 별다른 노력없이 해킹같은 행위가 가능하지만,
-                                POST는 URL에 표시되지 않는다. 어쨌든 POST도 보안에 취약하므로 둘다 보안처리를 해야한다고 함.
-                                그냥 프로토콜이라 생각하면 되겠네. -->
-
-    								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
->>>>>>> aa3aa992d6823648ecb2b83715a4df88af9e97f1
-    									<div class="form-group">
-    										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="아이디" value="">
-    									</div>
-    									<div class="form-group">
-    										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="이메일 주소" value="">
-    									</div>
-    									<div class="form-group">
-    										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="비밀번호">
-    									</div>
-    									<div class="form-group">
-    										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="비밀번호 재입력">
-    									</div>
-    									<div class="form-group">
-    										<div class="row">
-    											<div class="col-sm-6 col-sm-offset-3">
-    												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="회원가입 등록">
-    											</div>
-    										</div>
-    									</div>
-    								</form>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-
-      관리자로 로그인 성공 하였다고 가정, 관리자 페이지로 이동
-  <form class="navbar-form navbar-left" action="managerPage.php" method="post">
-      <button type="submit" class="btn btn-default">이동</button>
-  </form>
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <albel>댓글: </label>
+                    <textarea class="form-control" rows="5" id="commentXnotent" name="commentContent"></textarea>
+                    <br>
+                    <button type="submit" class="btn pull-right">등록</button>
+            </div>
+        </form>
+        <hr>
+    </div>
 
     <footer style="background-color: #000000; color: #ffffff">
         <div class="container" <br>
@@ -240,7 +172,6 @@ if(isset($_SESSION['is_login'])){
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/loginForm.js"></script>
     <!-- 해당 선언은 외부 스타일시트와 같은 역할을 한다고 보면 된다.
 외부의 자바스크립트를 가져오는 선언이다. -->
 

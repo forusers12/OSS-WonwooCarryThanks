@@ -1,3 +1,6 @@
+<?php
+  include "db.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +10,9 @@
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
+    <style type="text/css">
+
+h3{color: red;}
 </head>
 <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 
@@ -19,12 +25,12 @@
             background-size: cover;
             text-shadow: black 0.2em 0.2em 0.2em;
             color: white;
-
         }
 
-        .selectlist {
-            right: 0;
-            left: auto;
+        .media-object {
+            width: 150px;
+            height: auto;
+            /* auto로 설정하면 width의 크기를 따라간다 */
         }
     </style>
     <!-- 위와 같은 선언은 내부 CSS 선언이라고함
@@ -39,18 +45,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html">'C' Academy</a>
+                <a class="navbar-brand" href="index.html">'C' Academy</a>
+                <!--홈으로 돌아가기 추가-->
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">소개<span class="sr-only"></span></a></li>
-                    <li><a href="#">강사진</a></li>
+                    <li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+                    <li><a href="instructor.html">강사진</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">초급자</a></li>
-                            <li><a href="#">중급자</a></li>
-                            <li><a href="#">고급자</a></li>
+                            <li><a href="lecture.html?lectureName=C">C</a></li>
+                            <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -66,16 +72,59 @@
                     <li class=dropdown>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li><a href="loginForm.html">로그인</a></li>
+                            <li><a href="registerForm.html">회원가입</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <h3>함수</h3>
+    <div class="row"> <div class="col-sm-0"> 　</div>
+        <form name="selectlist" method="post">
+            <ul>
+                <div class="col-sm-2">
+                  <label><input type ="radio" name = "list" value = "funcName" checked="checked" /><a href ="managerFunc.php"> 함수로 보기</a></label>
+                  <label><input type ="radio" name = "list" value = "head" /><a href ="managerHead.php"> 헤더로 보기</a></label>
+                </div>
+            </ul>
+        </form>
+    </div>
 
+     <table class="list-table">
+       <thead>
+           <tr>
+               <th width="500">함수명</th>
+            </tr>
+         </thead>
+      <?php
+      $sql = mq("select * from function");
+                  while( $row = $sql->fetch_array()) {
+                    $funcName = $row["funcName"];
+                    $num = $row["num"];
+         ?>
+         <tbody>
+           <tr>
+         <td width="500"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+       </tr>
+       </tbody>
+       <?php } ?>
+       	<li><a href="management.php">추가</a></li>
+     </table>
 
+    <div class="container">
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <albel>댓글: </label>
+                    <textarea class="form-control" rows="5" id="commentXnotent" name="commentContent"></textarea>
+                    <br>
+                    <button type="submit" class="btn pull-right">등록</button>
+            </div>
+        </form>
+        <hr>
+    </div>
 
     <footer style="background-color: #000000; color: #ffffff">
         <div class="container" <br>
@@ -90,16 +139,15 @@
                 <div class="col-sm-2">
                     <h4 style="text-align: center;">네비게이션</h4>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">소개</a>
-                        <a href="#" class="list-group-item">강사진</a>
-                        <a href="#" class="list-group-item">강의</a>
+                        <a href="index.html" class="list-group-item">소개</a>
+                        <a href="instructor.html" class="list-group-item">강사진</a>
+                        <a href="lecture.html" class="list-group-item">강의</a>
                     </div>
                 </div>
 
                 <div class="col-sm-2">
                     <h4 style="text-align: center;">SNS</h4>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Facebook</a>
                         <a href="#" class="list-group-item">Youtube</a>
                         <a href="#" class="list-group-item">Naver</a>
                     </div>
