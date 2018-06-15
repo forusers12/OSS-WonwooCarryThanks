@@ -1,4 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+
+
+
+
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -15,6 +20,9 @@
   width: 100%;
   height: 100%;
 }
+
+
+
 
 div.content {
   overflow: hidden ;
@@ -514,10 +522,6 @@ section::after {
 }
 .carousel-fade .carousel-control {
   z-index: 2;
-}
-.tp-caption {
-  font-family: 'Lato', Arial !important;
-  -webkit-font-smoothing: antialiased;
 }
 .tp-caption.large_white_bold {
   color: #ffffff;
