@@ -4,12 +4,7 @@ include("./login/loginserv.php");
 ?>
 <!DOCTYPE html>
 <html>
-<?php
-session_start();
-if(isset($_SESSION['is_login'])){
-  header('Location: ./login/loginserv.php');
-}
-?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

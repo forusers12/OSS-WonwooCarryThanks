@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
    //echo '[연결성공]';
 }
 
- $query = mysqli_query($conn, "SELECT * FROM member WHERE password='$password' AND id='$id'");
+ $query = mysqli_query($conn, "SELECT * FROM member WHERE password=password('$password') AND id='$id'");
 
  $rows = mysqli_num_rows($query);
  if($rows == 1){
