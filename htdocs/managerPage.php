@@ -16,7 +16,7 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="stylesheet" href="css/mainpage.css">
 		<style type="text/css">
 
-h3{color: green;}
+h3{color: red;}
 
 
 </head>
@@ -86,13 +86,13 @@ h3{color: green;}
             </div>
         </div>
     </nav>
-    <h3>헤더</h3>
+    <h3>함수</h3>
     <div class="row"> <div class="col-sm-0"> 　</div>
         <form name="selectlist" method="post">
             <ul>
                 <div class="col-sm-2">
-                    <label><input type ="radio" name = "list" value = "funcName"  /><a href ="managerFunc.php"> 함수로 보기</a></label>
-                    <label><input type ="radio" name = "list" value = "head" checked="checked"/><a href ="managerHead.php"> 헤더로 보기</a></label>
+                    <label><input type ="radio" name = "list" value = "funcName"  checked="checked"/><a href ="managerFunc.php"> 함수로 보기</a></label>
+                    <label><input type ="radio" name = "list" value = "head" /><a href ="managerHead.php"> 헤더로 보기</a></label>
                 </div>
             </ul>
         </form>
@@ -107,18 +107,22 @@ h3{color: green;}
            </tr>
         </thead>
      <?php
+
+
      $sql = mq("select * from function where head ='".$bno."'");
+
                  while( $row = $sql->fetch_array()) {
                    $funcName = $row["funcName"];
-                   $num = $row["num"];
+
         ?>
         <tbody>
           <tr>
-        <td width="500"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+        <td width="500"><a href="/read.php?funcName=<?php echo $funcName; ?>"><?php echo $funcName;?></a></td>
       </tr>
       </tbody>
       <?php } ?>
 			<li><a href="management.php">추가</a></li>
+
     </table>
     <div class="container">
         <hr>
