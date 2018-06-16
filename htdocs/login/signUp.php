@@ -6,7 +6,7 @@ $mysql_hostname = 'localhost';
 $mysql_username = 'root';
 $mysql_password = '111111';
 $mysql_database = 'academy';
-$mysql_port = '3307';
+$mysql_port = '3306';
 $mysql_charset = 'utf8';
 $conn = new mysqli($mysql_hostname, $mysql_username,
 $mysql_password, $mysql_database, $mysql_port);
