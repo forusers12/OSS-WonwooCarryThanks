@@ -89,9 +89,9 @@
       <label for="highExplain">고급자 설명</label>
       <input type="text" id="highExplain" name="highExplain"><br>
 
-      <label for="beginPic1">초급자 실행사진1</label>
+      <label for="beginPic2">초급자 실행사진1</label>
 
-      <input type="file" id="beginPic1" name="beginPic1"><br>
+      <input type="file" id="beginPic2" name="beginPic2"><br>
 
 
 

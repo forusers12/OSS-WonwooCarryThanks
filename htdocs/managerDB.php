@@ -12,8 +12,8 @@ if(!$connect){
 }
 $uploads_dir = 'uploads/';
 
-$source = $_FILES['beginPic1']['tmp_name'];
-$dest = basename($_FILES['beginPic1']['name']);
+$source = $_FILES['beginPic2']['tmp_name'];
+$dest = basename($_FILES['beginPic2']['name']);
 move_uploaded_file($source, "$uploads_dir/$dest");
 
 $source_m = $_FILES['mediumPic1']['tmp_name'];
@@ -27,9 +27,19 @@ move_uploaded_file($source_h, "$uploads_dir/$dest_h");
 
 $data_stream = "'".$_POST['funcName']."','".$_POST['head']."','".$_POST['beginExplain']."','".$_POST['mediumExplain']."','".$_POST['highExplain']."','".$uploads_dir."','".$dest."','".$dest_m."','".$dest_h."','".$_POST['beginEx']."','".$_POST['beginRe']."','".$_POST['mediumEx']."','".$_POST['mediumRe']."','".$_POST['highEx']."','".$_POST['highRe']."'";
 
+$fName = $_POST['funcName'];
+$hName = $_POST['head'];
+$beName = $_POST['beginExplain'];
+$meName = $_POST['mediumExplain'];
+$heName = $_POST['highExplain'];
+$bexName = $_POST['beginEx'];
+$berName = $_POST['beginRe'];
+$mexName = $_POST['mediumEx'];
+$merName = $_POST['mediumRe'];
+$hixName = $_POST['highEx'];
+$hirName = $_POST['highRe'];
 
-
-$query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `mediumExplain`, `highExplain`, `beginPic1`, `beginPic2`, `mediumPic1`, `highPic1`, `beginEx`, `beginRe`, `mediumEx`, `mediumRe`, `highEx`, `highRe`) VALUES (".$data_stream.")";
+$query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `mediumExplain`, `highExplain`, `beginPic1`, `beginPic2`, `mediumPic1`, `highPic1`, `beginEx`, `beginRe`, `mediumEx`, `mediumRe`, `highEx`, `highRe`) VALUES (".$data_stream.") ON DUPLICATE KEY UPDATE funcName='$fName', head='$hName', beginExplain='$beName', mediumExplain='$meName', highExplain='$heName', beginPic1='$uploads_dir', beginPic2='$dest', mediumPic1='$dest_m', highPic1='$dest_h', beginEx='$bexName', beginRe='$berName', mediumEx='$mexName', mediumRe='$merName', highEx='$hixName', highRe='$hirName'";
 
   $result = mysqli_query($connect, $query);
 
@@ -37,10 +47,10 @@ $query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `mediumExpl
 
 if($result)
 {
-  //echo '성공';
+  echo '성공';
 }
 else {
-//  echo '실패';
+  echo '실패';
 }
 
 mysqli_close($connect);
