@@ -22,12 +22,12 @@ $highpic = $board['highPic1'];
  <div id="board_read">
 <ul>
 	<li class="read w10 fl">함수이름</li>
-	<li class="read_con">&nbsp;<?php echo $board['beginPic1'];?></li>
+	<li class="read_con">&nbsp;<?php echo $board['funcName'];?></li>
 
 </ul>
 <ul>
 	<li class="read w10 fl">헤더이름</li>
-	<li class="read_con">&nbsp;<?php echo $board['mediumPic1'];?></li>
+	<li class="read_con">&nbsp;<?php echo $board['head'];?></li>
 
 </ul>
 <ul>

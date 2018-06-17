@@ -19,7 +19,7 @@ if($conn->connect_errno){
 }
 
  $id=$_POST['id'];
- $password=md5($_POST['password']);
+ $password=$_POST['password'];
  $password2=$_POST['pwd2'];
  $email=$_POST['email'];
 
@@ -31,7 +31,7 @@ if($conn->connect_errno){
    echo "<script>window.history.back();</script>";
    exit(0);
  }
- $sql = "INSERT INTO member (id,password,email,admin) VALUES('$id','$password','$email','0')";
+ $sql = "INSERT INTO member (id,password,email,admin) VALUES('$id',password('$password'),'$email','0')";
 
  if($conn->query($sql)){
    echo "<script> alert('회원가입이 완료되었습니다..');</script>";

@@ -22,6 +22,8 @@ $highpic = $board['highPic1'];
  <body>
  <div id="board_read">
 
+	<form action="managerDB.php" data-ajax="false" method="post" enctype="multipart/form-data">
+
   <label for="funcName">함수이름</label>
   <input type="text" id="funcName" name="funcName" value="<?php echo $board['funcName'];?>"  required><br>
 
@@ -46,46 +48,54 @@ $highpic = $board['highPic1'];
   <input type="text" id="highExplain" name="highExplain" value="<?php echo nl2br("$board[highExplain]"); ?>"><br>
 
 
-  <label for="beginPic1">초급자 실행사진1</label>
+  <label for="beginPic2">초급자 실행사진1</label>
 
-  <input type="file" id="beginPic1" name="beginPic1"><br>
-	<?php echo "<img src = $src$beginpic>"?>
-
-
-	<li class="read_nl fl">중급자 실행사진</li>
-
-	<?php echo "<img src = $src$mediumpic>"?>
+  <input type="file" id="beginPic2" name="beginPic2"><br>
+	<?php echo "<img src = $src$beginpic>"?><br>
 
 
-	<li class="read_nl fl">고급자 실행사진</li>
+	<label for="mediumPic1">중급자 실행사진1</label>
+	<input type="file" id="mediumPic1" name="mediumPic1"><br>
 
-	<?php echo "<img src = $src$highpic>"?>
+	<?php echo "<img src = $src$mediumpic>"?><br>
 
-	<li class="read_nl fl">초급자 예제</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[beginEx]"); ?></li>
 
-	<li class="read_nl fl">초급자 예제 결과</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[beginRe]"); ?></li>
+	<label for="highPic1">고급자 실행사진1</label>
+	<input type="file" id="highPic1" name="highPic1"><br>
 
-	<li class="read_nl fl">중급자 예제</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[mediumEx]"); ?></li>
+	<?php echo "<img src = $src$highpic>"?><br>
 
-	<li class="read_nl fl">중급자 예제 결과</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[mediumRe]"); ?></li>
+	<label for="beginEx">초급자 예제</label>
+	<input type="text" id="beginEx" name="beginEx" value="<?php echo nl2br("$board[beginEx]"); ?>"><br>
 
-	<li class="read_nl fl">고급자 예제</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[highEx]"); ?></li>
 
-	<li class="read_nl fl">고급자 예제 결과</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[highRe]"); ?></li>
+	<label for="beginRe">초급자 예제 결과</label>
+	<input type="text" id="beginRe" name="beginRe" value="<?php echo nl2br("$board[beginRe]"); ?>"><br>
 
+
+	<label for="mediumEx">중급자 예제</label>
+	<input type="text" id="mediumEx" name="mediumEx" value="<?php echo nl2br("$board[mediumEx]"); ?>"><br>
+
+
+	<label for="mediumRe">중급자 예제 결과</label>
+	<input type="text" id="mediumRe" name="mediumRe" value="<?php echo nl2br("$board[mediumRe]"); ?>"><br>
+
+
+	<label for="highEx">고급자 예제</label>
+	<input type="text" id="highEx" name="highEx" value="<?php echo nl2br("$board[highEx]"); ?>"><br>
+
+
+	<label for="highRe">고급자 예제 결과</label>
+	<input type="text" id="highRe" name="highRe" value="<?php echo nl2br("$board[highRe]"); ?>"><br>
+
+	<br><br>
+	<input type="submit" value="수정확인">
+	<input type="reset" value="취소">
+	<a href="./managerFunc.php">[목록으로]</a>
+	<a href="delDB.php?funcName=<?php echo $funcName; ?>">[삭제]</a>
+  </form>
 </div>
-<div class="bo_ser">
-	<ul>
-		<li><a href="./managerFunc.php">[목록으로]</a></li>
-		<li><a href="./managerDB.php">[수정]</a></li>
-		<li><a href="delDB.php?funcName=<?php echo $funcName; ?>">[삭제]</a></li>
-	</ul>
-</div>
+
+
  </body>
 </html>
