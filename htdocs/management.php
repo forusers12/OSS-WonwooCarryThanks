@@ -50,7 +50,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lecture.html?lectureName=C">C</a></li>
+                          <li><a href="lectureF.php">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -76,12 +76,43 @@
         </div>
     </nav>
 
-    <form action="managerDB.php" data-ajax="false" method="post">
+    <form action="managerDB.php" data-ajax="false" method="post" enctype="multipart/form-data">
 
       <label for="funcName">함수이름</label>
       <input type="text" id="funcName" name="funcName"required><br>
       <label for="head">헤더이름</label>
       <input type="text" id="head" name="head"><br>
+      <label for="beginExplain">초급자 설명</label>
+      <input type="text" id="beginExplain" name="beginExplain"><br>
+      <label for="mediumExplain">중급자 설명</label>
+      <input type="text" id="mediumExplain" name="mediumExplain"><br>
+      <label for="highExplain">고급자 설명</label>
+      <input type="text" id="highExplain" name="highExplain"><br>
+
+      <label for="beginPic1">초급자 실행사진1</label>
+
+      <input type="file" id="beginPic1" name="beginPic1"><br>
+
+
+
+      <label for="mediumPic1">중급자 실행사진1</label>
+      <input type="file" id="mediumPic1" name="mediumPic1"><br>
+
+      <label for="highPic1">고급자 실행사진1</label>
+      <input type="file" id="highPic1" name="highPic1"><br>
+
+      <label for="beginEx">초급자 예제</label>
+      <input type="text" id="beginEx" name="beginEx"><br>
+      <label for="beginRe">초급자 예제 결과</label>
+      <input type="text" id="beginRe" name="beginRe"><br>
+      <label for="mediumEx">중급자 예제</label>
+      <input type="text" id="mediumEx" name="mediumEx"><br>
+      <label for="mediumRe">중급자 예제 결과</label>
+      <input type="text" id="mediumRe" name="mediumRe"><br>
+      <label for="highEx">고급자 예제</label>
+      <input type="text" id="highEx" name="highEx"><br>
+      <label for="highRe">고급자 예제 결과</label>
+      <input type="text" id="highRe" name="highRe"><br>
 
 
       <br><br>
