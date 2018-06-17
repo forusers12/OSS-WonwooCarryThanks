@@ -1,16 +1,15 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 반응형웹, 모바일 사용시 해상도 자동조정 -->
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
-    <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 </head>
-
+<!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 
 
 
@@ -20,23 +19,18 @@
             background-image: url('images/jumbotron.jpg');
             background-size: cover;
             text-shadow: black 0.2em 0.2em 0.2em;
-            /* 1em은 현재 폰트사이즈, 즉 2em은 현재 폰트사이즈의 2배
-            예를들어, 폰트사이즈가 10px이라면 2em은 20px의 크기를 차지한다.
-            Q) 왜 px냅두고 em단위를 사용하는가? */
             color: white;
         }
-
         .media-object {
             width: 150px;
             height: auto;
             /* auto로 설정하면 width의 크기를 따라간다 */
-        }
+}
     </style>
     <!-- 위와 같은 선언은 내부 CSS 선언이라고함
 대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
 
     <nav class="navbar navbar-default">
-        <!-- https://www.w3schools.com/bootstrap/bootstrap_navbar.asp 해당 사이트로 가면 부트스트랩 디자인에 대해 자세한 이해가능 -->
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -55,7 +49,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lectureF">C</a></li>
+                            <li><a href="lecture.html?lectureName=C">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -70,10 +64,19 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class=dropdown>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                          <?php
+                          if(isset($_SESSION['id'])){
+                            echo "".$_SESSION['id'];
+                            echo "님";
+                          }
+                          else{
+                            echo "접속하기";
+                          }
+                          ?><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="loginForm.html">로그인</a></li>
-                            <li><a href="registerForm.html">회원가입</a></li>
+                            <li><a href="loginForm.html">회원가입</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -81,7 +84,6 @@
         </div>
     </nav>
     <div class="container">
-        <!-- container와 row의 차이? 현재까진 비슷해보임, container가 범위는 더 커보인다. -->
         <div class="jumbotron">
             <h1 class="text-center"> 'C' Library Academy </h1>
             <p class="text-center"> 라이브러리 학습사이트 입니다. </p>
@@ -95,7 +97,7 @@
             <h4>'C' Library 아카데미 특징</h4>
             <p>저희 아카데미에서는 초급자, 중급자, 고급자 카테고리를 동시에 제공하고 있습니다.</p>
             <p><a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히 알아보기</a></p>
-            <!-- data-toggle : 버튼클릭시 해당 속성값을 가진 id의 div를 보여주기 위한 준비물.
+            <!-- data-toggle : 해당 속성값을 가진 id의 div를 보여준다.
              ex) <div class="modal" id="modal" tabindex="-1"> 부분을 보여줌-->
 
         </div>
@@ -133,7 +135,6 @@
     </div>
 
     <footer style="background-color: #000000; color: #ffffff">
-        <!-- ffffff : 흰색 -->
         <div class="container" <br>
             <div class="row">
                 <div class="col-sm-2" style="text-align: center;">
@@ -168,13 +169,6 @@
                     <div class="modal-header">
                         'C' Library Academy의 특징
                         <button class="close" data-dismiss="modal">&times;</button>
-                        <!-- data-dismiss를 적용하면 해당 div를 닫게하는 기능을 적용하겠다는 것.
-
-                    cf) 만약 div class 값이 modal 이 아닌 엉뚱한 modalll같은 값을 입력한다면
-                        해당 css는 존재하지 않기 떄문에 레이아웃 엉망이된다. dismiss가 틀린 값을 지닌 것 보다
-                    더 큰 리스크가 웹페이지에서 나타나게 보이는거임.
-                   이를, 외부 리스크와 내부 리스크로 가릴 수 있으며, 외부라고 해서 더 그 농도가 크다고 얘기할 순 없으나,
-                  고객의 입장에선 커보일 수 밖에 없음.-->
                     </div>
                     <div class="modal-body" style="text-align: center;">
                         저희 서비스의 특징은 단순 텍스트 제공뿐만 아니라, <br> 강의로 들을 수 있다는 점입니다. <br><br>

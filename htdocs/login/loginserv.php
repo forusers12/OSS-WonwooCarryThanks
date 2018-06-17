@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 $error='';
 if(isset($_POST['submit'])){
  if(empty($_POST['id']) || empty($_POST['password'])){
@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
  $mysql_username = 'root';
  $mysql_password = '111111';
  $mysql_database = 'academy';
- $mysql_port = '3307';
+ $mysql_port = '3306';
  $mysql_charset = 'utf8';
  $conn = new mysqli($mysql_hostname, $mysql_username,
  $mysql_password, $mysql_database, $mysql_port);
@@ -27,21 +27,25 @@ if(isset($_POST['submit'])){
    //echo '[연결성공]';
 }
 
- $query = mysqli_query($conn, "SELECT * FROM member WHERE password='$password' AND id='$id'");
-
- $rows = mysqli_num_rows($query);
- if($rows == 1){
-   $_SESSION['is_login']=true;
-   $_SESSION['id'] = $_POST['id'];
-
- header("Location: ./index_session.html");
+ $query = mysqli_query($conn, "SELECT * FROM member WHERE password=password('$password') AND id='$id'"); //db에서 맞는거 찾기
+ $admin = mysqli_query($conn, "SELECT * FROM member where id='$id' AND admin='1' ");
+ $adminCheck = mysqli_num_rows($admin);
+ $rows = mysqli_num_rows($query); // 찾아서 몇 줄인지 세보기
+ if($rows == 1){ // 1줄이면
+   $_SESSION['id'] = $id; //세션 변수를 만들기
+   if(isset($_SESSION['id'])){ // 세션변수가 참이면
+      header("Location: ../index_session.html"); //로그인 성공 페이지로 이동
+   }
+   else{
+     echo "세션 저장실패";
+   }
  }
  else
  {
  $error = "아이디 또는 패스워드가 일치하지않습니다.";
  }
 
- $conn->close(); // Closing connection
+ $conn->close();
  }
 
 }
