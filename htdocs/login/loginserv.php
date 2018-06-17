@@ -34,7 +34,13 @@ if(isset($_POST['submit'])){
  if($rows == 1){ // 1줄이면
    $_SESSION['id'] = $id; //세션 변수를 만들기
    if(isset($_SESSION['id'])){ // 세션변수가 참이면
-      header("Location: ../index_session.html"); //로그인 성공 페이지로 이동
+     if($adminCheck==1){
+       header("Location: ../index_admin.html");
+     }
+     else{
+       header("Location: ../index_session.html"); //로그인 성공 페이지로 이동
+     }
+
    }
    else{
      echo "세션 저장실패";
