@@ -117,7 +117,7 @@ h3{color: red;}
         ?>
         <tbody>
           <tr>
-        <td width="500"><a href="/read.php?funcName=<?php echo $funcName; ?>"><?php echo $funcName;?></a></td>
+        <td width="500"><a href="/readManager.php?funcName=<?php echo $funcName; ?>"><?php echo $funcName;?></a></td>
       </tr>
       </tbody>
       <?php } ?>

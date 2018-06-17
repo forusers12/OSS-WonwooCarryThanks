@@ -6,6 +6,7 @@ header('Content-Type: text/html; charset=utf-8');
 	$bno = $_GET['funcName'];
 	$sql = mq("select * from function where funcName='".$bno."'");
 	$board = $sql->fetch_array();
+  $funcName = $board['funcName'];
 	$src = $board['beginPic1'];
 $beginpic = $board['beginPic2'];
 $mediumpic = $board['mediumPic1'];
@@ -20,75 +21,70 @@ $highpic = $board['highPic1'];
  </head>
  <body>
  <div id="board_read">
-<ul>
-	<li class="read w10 fl">함수이름</li>
-	<li class="read_con">&nbsp;<?php echo $board['beginPic1'];?></li>
 
-</ul>
-<ul>
-	<li class="read w10 fl">헤더이름</li>
-	<li class="read_con">&nbsp;<?php echo $board['mediumPic1'];?></li>
+  <label for="funcName">함수이름</label>
+  <input type="text" id="funcName" name="funcName" value="<?php echo $board['funcName'];?>"  required><br>
 
-</ul>
-<ul>
-	<li class="read_nl fl">초급자 설명</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[beginExplain]"); ?></li>
-</ul>
-<ul>
-	<li class="read_nl fl">중급자 설명</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[mediumExplain]"); ?></li>
-</ul>
-<ul>
-	<li class="read_nl fl">고급자 설명</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[highExplain]"); ?></li>
-</ul>
-<ul>
-	<li class="read_nl fl">초급자 실행사진</li>
 
+
+
+  <label for="head">헤더이름</label>
+  <input type="text" id="head" name="head" value="<?php echo $board['head'];?>"> <br>
+
+
+
+
+  <label for="beginExplain">초급자 설명</label>
+  <input type="text" id="beginExplain" name="beginExplain" value="<?php echo nl2br("$board[beginExplain]"); ?>"><br>
+
+
+  <label for="mediumExplain">중급자 설명</label>
+  <input type="text" id="mediumExplain" name="mediumExplain" value="<?php echo nl2br("$board[mediumExplain]"); ?>"><br>
+
+
+  <label for="highExplain">고급자 설명</label>
+  <input type="text" id="highExplain" name="highExplain" value="<?php echo nl2br("$board[highExplain]"); ?>"><br>
+
+
+  <label for="beginPic1">초급자 실행사진1</label>
+
+  <input type="file" id="beginPic1" name="beginPic1"><br>
 	<?php echo "<img src = $src$beginpic>"?>
 
-</ul>
-<ul>
+
 	<li class="read_nl fl">중급자 실행사진</li>
 
 	<?php echo "<img src = $src$mediumpic>"?>
 
-</ul>
-<ul>
+
 	<li class="read_nl fl">고급자 실행사진</li>
 
 	<?php echo "<img src = $src$highpic>"?>
 
-</ul>
-<ul>
 	<li class="read_nl fl">초급자 예제</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[beginEx]"); ?></li>
-</ul>
-<ul>
+
 	<li class="read_nl fl">초급자 예제 결과</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[beginRe]"); ?></li>
-</ul>
 
-<ul>
 	<li class="read_nl fl">중급자 예제</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[mediumEx]"); ?></li>
-</ul>
-<ul>
+
 	<li class="read_nl fl">중급자 예제 결과</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[mediumRe]"); ?></li>
-</ul>
-<ul>
+
 	<li class="read_nl fl">고급자 예제</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[highEx]"); ?></li>
-</ul>
-<ul>
+
 	<li class="read_nl fl">고급자 예제 결과</li>
 	<li class="read_nl_con"><?php echo nl2br("$board[highRe]"); ?></li>
-</ul>
+
 </div>
 <div class="bo_ser">
 	<ul>
 		<li><a href="./managerFunc.php">[목록으로]</a></li>
+		<li><a href="./managerDB.php">[수정]</a></li>
+		<li><a href="delDB.php?funcName=<?php echo $funcName; ?>">[삭제]</a></li>
 	</ul>
 </div>
  </body>

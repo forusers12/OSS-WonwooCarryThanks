@@ -14,8 +14,6 @@ function connect_db($host, $dbid, $dbpw, $dbname)
   return mysqli_connect($host, $dbid, $dbpw, $dbname);
 }
 
-	$db = new mysqli("localhost","root","111111","academy");
-	$db->set_charset("utf8");
 
 function mq($sql){
   global $db;

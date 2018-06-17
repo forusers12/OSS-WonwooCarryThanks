@@ -10,7 +10,7 @@ if(!$connect){
 } else {
    //echo '[연결성공]';
 }
-$uploads_dir = 'C:\Users\사용자\Documents\OSS-WonwooCarryThanks\htdocs\uploads';
+$uploads_dir = 'uploads/';
 
 $source = $_FILES['beginPic1']['tmp_name'];
 $dest = basename($_FILES['beginPic1']['name']);
@@ -47,6 +47,6 @@ mysqli_close($connect);
 
 
 echo ('입력이 완료되었습니다.');
-echo("<meta http-equiv='Refresh' content='2; URL=managerPage.php'>");
+echo("<meta http-equiv='Refresh' content='2; URL=managerFunc.php'>");
 
 ?>
