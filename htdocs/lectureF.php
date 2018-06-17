@@ -10,6 +10,10 @@
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
+
+    <style type="text/css">
+
+h3{color: red;}
 </head>
 <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 
@@ -52,7 +56,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lecture.html?lectureName=C">C</a></li>
+                          <li><a href="lectureF.php">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -78,7 +82,7 @@
         </div>
     </nav>
     <h3>함수</h3>
-    <div class="row"> <div class="col-sm-10"> 　</div>
+    <div class="row"> <div class="col-sm-0"> 　</div>
         <form name="selectlist" method="post">
             <ul>
                 <div class="col-sm-2">
@@ -99,11 +103,11 @@
       $sql = mq("select * from function");
                   while( $row = $sql->fetch_array()) {
                     $funcName = $row["funcName"];
-                    $num = $row["num"];
+
          ?>
          <tbody>
            <tr>
-         <td width="500"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+         <td width="500"><a href="/read.php?funcName=<?php echo $funcName; ?>"><?php echo $funcName;?></a></td>
        </tr>
        </tbody>
        <?php } ?>

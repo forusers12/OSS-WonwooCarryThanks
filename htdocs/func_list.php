@@ -58,7 +58,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lectureF">C</a></li>
+                            <li><a href="lectureF.php">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -99,7 +99,7 @@
        $sql = mq("select * from function where funcName like '%$function%'");
                    while( $row = $sql->fetch_array()) {
                      $funcName = $row["funcName"];
-                     $num = $row["num"];
+
                      $head = $row['head'];
                      $beginEx = $row['beginExplain'];
                      if(strlen($beginEx)>30){
@@ -108,7 +108,7 @@
           ?>
           <tbody>
             <tr>
-          <td width="120"><a href="board/read.php?num=<?php echo $num; ?>"><?php echo $funcName;?></a></td>
+          <td width="120"><a href="read.php?funcName=<?php echo $funcName; ?>"><?php echo $funcName;?></a></td>
           <th width = "120"><?php echo $row['head'] ?></th>
           <th width = "500"><?php echo $row['beginExplain'] ?></th>
         </tr>

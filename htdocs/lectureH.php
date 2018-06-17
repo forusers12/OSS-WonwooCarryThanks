@@ -10,6 +10,10 @@
     <title>'C' Library Academy</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mainpage.css">
+
+    <style type="text/css">
+
+    h3{color: green;}
 </head>
 <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
 
@@ -52,7 +56,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lecture.html?lectureNameF">C</a></li>
+                          <li><a href="lectureF.php">C</a></li>
                             <li><a href="lecture.html?lectureName=Java">Java</a></li>
                         </ul>
                     </li>
@@ -78,7 +82,7 @@
         </div>
     </nav>
     <h3>헤더</h3>
-    <div class="row"> <div class="col-sm-10"> 　</div>
+    <div class="row"> <div class="col-sm-0"> 　</div>
         <form name="selectlist" method="post">
             <ul>
                 <div class="col-sm-2">
