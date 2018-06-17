@@ -37,7 +37,7 @@
 											$head = $row["head"];
 					 ?>
 					 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-						 <a class="nav-link" href="lectureHn.php?head=<?php echo $head; ?>">
+						 <a class="nav-link" href="tables.php?head=<?php echo $head; ?>">
 							 <i class="fa fa-fw fa-table"></i>
 							 <span class="nav-link-text"><?php echo $head;?></span>
 						 </a>
