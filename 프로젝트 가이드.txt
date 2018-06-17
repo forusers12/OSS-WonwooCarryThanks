@@ -1,0 +1,37 @@
+﻿[비추]와 [추천] 에 대한 설명
+해당 기능을 사용하는데 여러 방법이 있는데
+추천에 적힌 방법을 권유한다는 것.
+
+
+
+<SQL 내보내기 / 가져오기>
+
+1. 만약 '오픈소스' 라는 DB를 내보내고 싶다면, cmd에서 다음처럼
+
+
+[비추] mysqldump -u root -p 오픈소스 > C:\Users\Dyllis\Desktop\원하는이름.sql 
+[추천] mysqldump -u root -p 오픈소스 > C:\Users\Dyllis\Desktop\원하는이름.txt
+=> 뒤에 경로는 바탕화면으로 두는게 편함
+
+
+2. DB를 가져올 때,
+[비추] mysqldump -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\ProjectDb.sql
+[추천] mysqldump -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\ProjectDb.txt
+
+	<만약 1049 Error가 나온다면>
+기존에 누군가 백업한 DB를 가져오기 위해선, 서버에 동일한 명의 DB가 있어야한다.
+ 1. 새로운 디비를 생성해준다.
+ Create Database 오픈소스;
+ 
+ 그리고 mysql을 나가서 cmd창에서 다시
+ mysql -u root -p 오픈소스 < C:\Users\Dyllis\Desktop\오픈소스.sql
+ 를 입력해준다.
+
+mysql 백업
+http://bizadmin.tistory.com/entry/MySQL-%EB%B0%B1%EC%97%85-%EB%B0%8F-%EB%B3%B5%EA%B5%AC%ED%95%98%EA%B8%B0
+
+
+백업 2 http://cloudless.tistory.com/22
+
+백업파일 복구 법 
+http://bizadmin.tistory.com/entry/mysql-%EB%8D%A4%ED%94%84%EB%B0%B1%EC%97%85%ED%8C%8C%EC%9D%BC-%EB%B3%B5%EA%B5%AC-%ED%95%98%EA%B8%B0?category=754883
