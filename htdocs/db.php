@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-	$db = new mysqli("localhost","root","12309753","db1");
+	$db = new mysqli("localhost","root","111111","oss");
 	$db->set_charset("utf8");
 
 	$host="localhost";
