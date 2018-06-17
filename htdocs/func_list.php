@@ -1,88 +1,114 @@
 <?php
   include "db.php";
 ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ko" class="no-js">
+<!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 반응형웹, 모바일 사용시 해상도 자동조정 -->
+    <meta charset="UTF-8">
     <title>'C' Library Academy</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/mainpage.css">
-    <!-- link rel="stylesheet"은 외부 스타일시트를 선언하는 태그 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Bootstrap 3.3.2 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/js/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script type="text/javascript" src="assets/js/modernizr.custom.32033.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
+
+<style>
+@font-face {
+      font-family: '주아';
+      src: url(assets/fonts/주아.ttf) format('truetype');
+}
+body {
+    font-family: '주아';
+}
+a {
+    font-family: '주아';
+}
+#nav1, #nav2, #nav3 { font-size: 18px; }
+#indexSearch{ margin:-15px; padding-right: 120px;}
+#nav1 {padding-right: 30px;}
+#nav2 {padding-right: 30px;}
+#nav3 {padding-right: 30px;}
+
+</style>
 
 
 
 
 <body>
-    <style type="text/css">
-        .jumbotron {
-            background-image: url('images/jumbotron.jpg');
-            background-size: cover;
-            text-shadow: black 0.2em 0.2em 0.2em;
-            /* 1em은 현재 폰트사이즈, 즉 2em은 현재 폰트사이즈의 2배
-            예를들어, 폰트사이즈가 10px이라면 2em은 20px의 크기를 차지한다.
-            Q) 왜 px냅두고 em단위를 사용하는가? */
-            color: white;
-        }
-
-        .media-object {
-            width: 150px;
-            height: auto;
-            /* auto로 설정하면 width의 크기를 따라간다 */
-        }
-    </style>
-    <!-- 위와 같은 선언은 내부 CSS 선언이라고함
-대형전광판 역할을 하고 있는 jumbotron을 보여주고 있는 모습이다.-->
-
-    <nav class="navbar navbar-default">
-        <!-- https://www.w3schools.com/bootstrap/bootstrap_navbar.asp 해당 사이트로 가면 부트스트랩 디자인에 대해 자세한 이해가능 -->
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">'C' Academy</a>
-                <!--홈으로 돌아가기 추가-->
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
-                    <li><a href="instructor.html">강사진</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="lectureF.php">C</a></li>
-                            <li><a href="lecture.html?lectureName=Java">Java</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!--검색 php 전달을 위한 문구 삽입
-                -->
-                <form class="navbar-form navbar-left" action="func_list.php" method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="searchterm" placeholder="내용을 입력하세요.">
-                    </div>
-                    <button type="submit" class="btn btn-default">검색</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class=dropdown>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="loginForm.html">로그인</a></li>
-                            <li><a href="registerForm.html">회원가입</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <div class="pre-loader">
+        <div class="load-con">
+            <img src="assets/img/freeze/cat.png" class="animated fadeInDown" alt="" width="120" height="120">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <header>
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="fa fa-bars fa-lg"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/freeze/cat.png" alt="" class="logo"  width="120" height="120">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#about"></a>
+                            <form class="navbar-form navbar-left" action="func_list.php" method="post" id="indexSearch">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="searchterm" placeholder="함수를 입력하세요.">
+                                </div>
+                                <button type="submit" class="btn btn-default">검색</button>
+                            </form>
+                            </li>
+
+
+                            <li ><a href="c.php" id="nav1">C</a>
+                            </li>
+                            <li><a href="login.html" id="nav2">로그인</a>
+                            </li>
+                            <li><a href="register.html" id="nav3">회원가입</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-->
+        </nav>
+            </header>
     <section>
       <article><h1>검색결과</h1>
       <h4>제목 검색</h4>
@@ -117,46 +143,23 @@
       </table>
      </article>
      </section>
-    <footer style="background-color: #000000; color: #ffffff">
-        <div class="container"
-            <br>
-            <div class="row">
-                <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2018</h5><h5>너나들이(정민수,김한결,조원우,이현수)</h5></div>
-                <div class="col-sm-4"><h4>팀 소개</h4><p>저희는 오픈소스 너나들이팀입니다. 선문대학교에서 김봉재교수님 수업을 듣고 있습니다.</p></div>
-                <div class="col-sm-2"><h4 style="text-align: center;">네비게이션</h4>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">소개</a>
-                        <a href="#" class="list-group-item">강사진</a>
-                        <a href="#" class="list-group-item">강의</a>
-                    </div>
-                </div>
+     <footer>
+         <div class="container">
 
-                <div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Facebook</a>
-                        <a href="#" class="list-group-item">Youtube</a>
-                        <a href="#" class="list-group-item">Naver</a>
-                    </div>
-                </div>
-            </div>
-    </footer>
-    <div class="row">
-        <div class="modal" id="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        'C' Library Academy의 특징
-                        <button class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body" style="text-align: center;">
-                        저희 서비스의 특징은 단순 텍스트 제공뿐만 아니라, <br>
-                        강의로 들을 수 있다는 점입니다. <br><br>
-                        <img src="images/lecture.jpg" id="imagepreview" style="width: 256px; hegiht: 256px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+             <a href="#" class="scrollpoint sp-effect3">
+                 <img src="assets/img/freeze/cat.png" alt="" class="logo"  width="120" height="120">
+             </a>
+             <div class="social">
+                 <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-twitter fa-lg"></i></a>
+                 <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-google-plus fa-lg"></i></a>
+                 <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-facebook fa-lg"></i></a>
+             </div>
+             <div class="rights">
+                 <p>Copyright &copy; 2018</p>
+                 <p>Template by <a href="http://www.scoopthemes.com" target="_blank">ScoopThemes</a></p>
+             </div>
+         </div>
+     </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
