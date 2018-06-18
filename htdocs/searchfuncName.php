@@ -1,6 +1,6 @@
 <?php
   include 'db.php';
-	$bno = $_GET['head'];
+  $bno = $_GET['searchterm'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +25,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">'C' Library Academy</a>
+    <a class="navbar-brand" href="index.php">'C' Library Academy</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,29 +86,32 @@
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 			  <div class="card-header">
-			    <i class="fa fa-table"><?php echo $bno?></i></div>
+			    <i class="fa fa-table">검색결과</i></div>
 			  <div class="card-body">
 			    <div class="table-responsive">
-			      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			      <table class="table" id="searchTable" width="100%" cellspacing="0">
 			        <thead>
 			          <tr>
 			            <th>함수명</th>
-			            <th>기초설명</th>
+			            <th>헤더</th>
+                  <th>기초설명</th>
 			            <th>자세히보기</th>
 			          </tr>
 			        </thead>
 			        <tfoot>
 			          <tr>
 			            <th>함수명</th>
-			            <th>기초설명</th>
+			            <th>헤더</th>
+                  <th>기초설명</th>
 			            <th>자세히보기</th>
 			          </tr>
 			        </tfoot>
 								 <tbody>
                    <?php
-     							$sql = mq("select * from function where head ='$bno'");
+     							$sql = mq("select * from function where funcName like '%$bno%'");
      													while( $row = $sql->fetch_array()) {
      														$funcName = $row["funcName"];
+                                $head = $row["head"];
      														$beginEx = $row['beginExplain'];
      														if(strlen($beginEx)>50){
      								 $beginEx=str_replace($row["beginExplain"],mb_substr($row["beginExplain"],0,50,"utf-8")."...",$row["beginExplain"]);
@@ -116,6 +119,7 @@
      								 ?>
 									 <tr>
 								 <td><?php echo $funcName;?></a></td>
+                 <td><?php echo $head;?></a></td>
 								 <td><?php echo $beginEx ?></td>
 								 <td><a href="board/read.php?funcName=<?php echo $funcName; ?>">보기</td>
 							 </tr>
