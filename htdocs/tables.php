@@ -37,7 +37,7 @@
 											$head = $row["head"];
 					 ?>
 					 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-						 <a class="nav-link" href="tables.php?head=<?php echo $head; ?>">
+						 <a class="nav-link" href="lectureHn.php?head=<?php echo $head; ?>">
 							 <i class="fa fa-fw fa-table"></i>
 							 <span class="nav-link-text"><?php echo $head;?></span>
 						 </a>
@@ -102,23 +102,23 @@
 			            <th>자세히보기</th>
 			          </tr>
 			        </tfoot>
-							<?php
-							$sql = mq("select * from function where head ='$bno'");
-													while( $row = $sql->fetch_array()) {
-														$funcName = $row["funcName"];
-														$beginEx = $row['beginExplain'];
-														if(strlen($beginEx)>50){
-								 $beginEx=str_replace($row["beginExplain"],mb_substr($row["beginExplain"],0,50,"utf-8")."...",$row["beginExplain"]);
-							 }
-								 ?>
 								 <tbody>
+                   <?php
+     							$sql = mq("select * from function where head ='$bno'");
+     													while( $row = $sql->fetch_array()) {
+     														$funcName = $row["funcName"];
+     														$beginEx = $row['beginExplain'];
+     														if(strlen($beginEx)>50){
+     								 $beginEx=str_replace($row["beginExplain"],mb_substr($row["beginExplain"],0,50,"utf-8")."...",$row["beginExplain"]);
+     							 }
+     								 ?>
 									 <tr>
 								 <td><?php echo $funcName;?></a></td>
 								 <td><?php echo $beginEx ?></td>
 								 <td><a href="board/read.php?funcName=<?php echo $funcName; ?>">보기</td>
 							 </tr>
+               <?php } ?>
 							 </tbody>
-							 <?php } ?>
 			      </table>
 			    </div>
 			  </div>
