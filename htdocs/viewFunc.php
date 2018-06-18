@@ -4,7 +4,12 @@
   	$bno = $_GET['funcName'];
   	$sql = mq("select * from function where funcName='".$bno."'");
   	$board = $sql->fetch_array();
-  	$src = $board['beginPic1'];
+  	$src = $board['route'];
+
+		$funcName = $board['funcName'];
+		$exPic = $board['exPic'];
+		$printPic = $board['printPic'];
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -59,7 +64,7 @@
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchfuncName.php" method="get" id="indexSearch">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchName.php" method="get" id="indexSearch">
             <div class="input-group">
               <input class="form-control" type="text" name="searchterm"  placeholder="Search for...">
               <span class="input-group-append">
@@ -72,7 +77,21 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+<!-- 로그인 세션부분-->
+            <?php
+            if(isset($_SESSION['id'])){
+
+              echo'<i class="fa fa-fw fa-sign-out"></i>Logout</a>';
+
+            }
+            else{
+              echo'<li><a class="nav-link" href="login.html" id="nav2">로그인</a>';
+              echo'</li>';
+
+            }
+
+            ?>
+            <!-- 로그인 세션부분-->
         </li>
       </ul>
     </div>
@@ -82,10 +101,11 @@
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 			  <div class="card-body">
-          <h3>함수명 <?php echo $board['funcName'];?></h3>
-          <h5>헤더 <?php echo $board['head'];?></h5>
-          <div class="progress" style="height: 1px;">
-  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+			
+            <h3>함수명 <?php echo $board['funcName'];?></h3>
+         <h5>헤더 <?php echo $board['head'];?></h5>
+         <div class="progress" style="height: 1px;">
+ <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <p class="text-md-left"><?php echo $board['beginExplain'];?></p>
 <p></p>
@@ -98,13 +118,24 @@
 <p></p>
 <p class="text-md-left"><?php echo $board['returnValue2'];?></p>
 
-<p></p>
-<h5>사용 예</h5>
-<p class="text-md-left">사용예</p>
+			<label for="exPic">예제 사진</label> <br>
 
-<p></p>
-<h5>출력</h5>
-<p class="text-md-left">출력</p>
+
+				<?php echo "<img src = $src$exPic>"?><br>
+
+
+				<label for="printPic">결과 사진</label> <br>
+
+				<?php echo "<img src = $src$printPic>"?><br>
+
+				<br><br>
+
+
+			  <button type="button" onclick="location.href='tables.php?head=stdio.h'" >목록으로	</button>
+
+
+			</form>
+			  </form>
 			  </div>
 			</div>
 			</div>
@@ -126,15 +157,15 @@
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
 			    <div class="modal-header">
-			      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+			      <h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
 			      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
 			        <span aria-hidden="true">×</span>
 			      </button>
 			    </div>
-			    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			    <div class="modal-body">로그아웃 하시겠습니까?</div>
 			    <div class="modal-footer">
 			      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-			      <a class="btn btn-primary" href="login.html">Logout</a>
+			      <a class="btn btn-primary" href="./login/logout.php">Logout</a>
 			    </div>
 			  </div>
 			</div>
