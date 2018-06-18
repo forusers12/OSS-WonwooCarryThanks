@@ -78,7 +78,7 @@ a {
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="fa fa-bars fa-lg"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.php">
                             <img src="assets/img/freeze/cat.png" alt="" class="logo"  width="120" height="120">
                         </a>
                     </div>
