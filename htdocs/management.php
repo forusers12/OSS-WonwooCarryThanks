@@ -72,8 +72,11 @@
                   <i class="fa fa-search"></i>
                 </button>
 <<<<<<< HEAD
+<<<<<<< HEAD
               </span>
 =======
+=======
+>>>>>>> origin/master
                 <a class="navbar-brand" href="index.php">'C' Academy</a>
                 <!--홈으로 돌아가기 추가-->
             </div>
