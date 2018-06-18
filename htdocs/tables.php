@@ -66,9 +66,25 @@
             </div>
           </form>
         </li>
+
         <li class="nav-item">
+
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <!-- 로그인 세션부분-->
+            <?php
+            if(isset($_SESSION['id'])){
+
+              echo'<i class="fa fa-fw fa-sign-out"></i>Logout</a>';
+
+            }
+            else{
+              echo'<li><a class="nav-link" href="login.html" id="nav2">로그인</a>';
+              echo'</li>';
+
+            }
+
+            ?>
+<!-- 로그인 세션부분-->
         </li>
       </ul>
     </div>
@@ -108,7 +124,7 @@
      								 ?>
 									 <tr>
 								 <td><?php echo $funcName;?></a></td>
-								 <td><?php echo $beginEx ?></td>
+								 <td><?php echo $beginEx; ?></td>
 								 <td><a href="viewFunc.php?funcName=<?php echo $funcName; ?>">보기</td>
 							 </tr>
                <?php } ?>
@@ -136,15 +152,15 @@
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
 			    <div class="modal-header">
-			      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+			      <h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
 			      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
 			        <span aria-hidden="true">×</span>
 			      </button>
 			    </div>
-			    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			    <div class="modal-body">로그아웃 하시겠습니까?</div>
 			    <div class="modal-footer">
 			      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-			      <a class="btn btn-primary" href="login.html">Logout</a>
+			      <a class="btn btn-primary" href="./login/logout.php">Logout</a>
 			    </div>
 			  </div>
 			</div>
