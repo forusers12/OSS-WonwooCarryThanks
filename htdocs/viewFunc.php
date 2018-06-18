@@ -1,9 +1,13 @@
 <?php
   include 'db.php';
-	$bno = $_GET['head'];
+  header('Content-Type: text/html; charset=utf-8');
+  	$bno = $_GET['funcName'];
+  	$sql = mq("select * from function where funcName='".$bno."'");
+  	$board = $sql->fetch_array();
+  	$src = $board['beginPic1'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="utf-8">
@@ -79,44 +83,28 @@
     <div class="container-fluid">
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
-			  <div class="card-header">
-			    <i class="fa fa-table"><?php echo $bno?></i></div>
 			  <div class="card-body">
-			    <div class="table-responsive">
-			      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-			        <thead>
-			          <tr>
-			            <th>함수명</th>
-			            <th>기초설명</th>
-			            <th>자세히보기</th>
-			          </tr>
-			        </thead>
-			        <tfoot>
-			          <tr>
-			            <th>함수명</th>
-			            <th>기초설명</th>
-			            <th>자세히보기</th>
-			          </tr>
-			        </tfoot>
-								 <tbody>
-                   <?php
-     							$sql = mq("select * from function where head ='$bno'");
-     													while( $row = $sql->fetch_array()) {
-     														$funcName = $row["funcName"];
-     														$beginEx = $row['beginExplain'];
-     														if(strlen($beginEx)>50){
-     								 $beginEx=str_replace($row["beginExplain"],mb_substr($row["beginExplain"],0,50,"utf-8")."...",$row["beginExplain"]);
-     							 }
-     								 ?>
-									 <tr>
-								 <td><?php echo $funcName;?></a></td>
-								 <td><?php echo $beginEx ?></td>
-								 <td><a href="viewFunc.php?funcName=<?php echo $funcName; ?>">보기</td>
-							 </tr>
-               <?php } ?>
-							 </tbody>
-			      </table>
-			    </div>
+          <h3>함수명 <?php echo $board['funcName'];?></h3>
+          <h5>헤더 <?php echo $board['head'];?></h5>
+          <div class="progress" style="height: 1px;">
+  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<p class="text-md-left"><?php echo $board['beginExplain'];?></p>
+<p></p>
+<h5>입력 매개변수 리스트</h5>
+<p class="text-md-left">간단한 설명</p>
+
+<p></p>
+<h5>반환값</h5>
+<p class="text-md-left">간단한 설명</p>
+
+<p></p>
+<h5>사용 예</h5>
+<p class="text-md-left">사용예</p>
+
+<p></p>
+<h5>출력</h5>
+<p class="text-md-left">출력</p>
 			  </div>
 			</div>
 			</div>
