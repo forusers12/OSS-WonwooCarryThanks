@@ -45,12 +45,12 @@ h3{color: red;}
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">'C' Academy</a>
+                <a class="navbar-brand" href="index.php">'C' Academy</a>
                 <!--홈으로 돌아가기 추가-->
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+                    <li class="active"><a href="index.php">소개<span class="sr-only"></span></a></li>
                     <li><a href="instructor.html">강사진</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
@@ -140,7 +140,7 @@ h3{color: red;}
                 <div class="col-sm-2">
                     <h4 style="text-align: center;">네비게이션</h4>
                     <div class="list-group">
-                        <a href="index.html" class="list-group-item">소개</a>
+                        <a href="index.php" class="list-group-item">소개</a>
                         <a href="instructor.html" class="list-group-item">강사진</a>
                         <a href="lecture.html" class="list-group-item">강의</a>
                     </div>

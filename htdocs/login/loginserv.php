@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
  $mysql_username = 'root';
  $mysql_password = '111111';
  $mysql_database = 'academy';
- $mysql_port = '3306';
+ $mysql_port = '3307';
  $mysql_charset = 'utf8';
  $conn = new mysqli($mysql_hostname, $mysql_username,
  $mysql_password, $mysql_database, $mysql_port);
@@ -48,7 +48,9 @@ if(isset($_POST['submit'])){
  }
  else
  {
- $error = "아이디 또는 패스워드가 일치하지않습니다.";
+     echo "<script> alert('아이디와 비밀번호를 정확히 입력해주세요..');</script>";
+     echo "<script>window.history.back();</script>";
+
  }
 
  $conn->close();

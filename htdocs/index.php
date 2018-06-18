@@ -273,38 +273,34 @@ a {
             <div class="container">
 
                 <div class="section-heading scrollpoint sp-effect3">
-                    <h1>About Us</h1>
+                    <h1>'C' Library Academy </h1>
                     <div class="divider"></div>
-                    <p>Oleose Beautiful App Landing Page</p>
+                    <p>직관화, 심플, 세련</p>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="about-item scrollpoint sp-effect2">
-                            <i class="fa fa-download fa-2x"></i>
-                            <h3>Easy setup</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        </div>
-                    </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-6" >
+                </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect5">
                             <i class="fa fa-mobile fa-2x"></i>
-                            <h3>On-the-go</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            <h3>핸드폰에서도</h3>
+                            <p>편하게 컨텐츠를 즐기세요!</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                    <div class="col-md-2 col-sm-2 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect5">
                             <i class="fa fa-users fa-2x"></i>
-                            <h3>Social connect</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            <h3>커뮤니티구성</h3>
+                            <p>질문과 답변을 위한 댓글은 자신과 커뮤니티에 이롭습니다.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect1">
                             <i class="fa fa-sliders fa-2x"></i>
-                            <h3>Dedicated support</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            <h3>배려와 깊이가 있는</h3>
+                            <p>기초적인 내용부터, 전문가가 활용할 수 있는 내용까지 모두 담고있어요!</p>
                         </div>
                     </div>
                 </div>
@@ -315,9 +311,9 @@ a {
         <section id="support" class="doublediagonal">
             <div class="container">
                 <div class="section-heading scrollpoint sp-effect3">
-                    <h1>Support</h1>
+                    <h1>문의하기</h1>
                     <div class="divider"></div>
-                    <p>For more info and support, contact us!</p>
+                    <p>궁금증과 건의사항이 있으시면 저희에게 연락주세요!</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -325,15 +321,15 @@ a {
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name">
+                                        <input type="text" class="form-control" placeholder="이름">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your email">
+                                        <input type="email" class="form-control" placeholder="이메일">
                                     </div>
                                     <div class="form-group">
-                                        <textarea cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                        <textarea cols="30" rows="10" class="form-control" placeholder="할 말"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">제출</button>
                                 </form>
                             </div>
                             <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
@@ -342,7 +338,7 @@ a {
                                         <i class="fa fa-map-marker fa-2x"></i>
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">4, Some street, California, USA</h4>
+                                        <h4 class="media-heading">선문대학교 인문관 4층</h4>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -351,7 +347,7 @@ a {
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-                                            <a href="mailto:support@oleose.com">support@oleose.com</a>
+                                            <a href="mailto:ope21@naver.com">ope21@naver.com</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -360,7 +356,7 @@ a {
                                         <i class="fa fa-phone fa-2x"></i>
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">+1 234 567890</h4>
+                                        <h4 class="media-heading">+82 010 3825 9888</h4>
                                     </div>
                                 </div>
                             </div>
@@ -383,7 +379,7 @@ a {
                 </div>
                 <div class="rights">
                     <p>Copyright &copy; 2018</p>
-                    <p>Template by <a href="http://www.scoopthemes.com" target="_blank">ScoopThemes</a></p>
+                    <p>Team by 너나들이</a></p>
                 </div>
             </div>
         </footer>
