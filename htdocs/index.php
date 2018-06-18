@@ -78,7 +78,7 @@ a {
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="fa fa-bars fa-lg"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.php">
                             <img src="assets/img/freeze/cat.png" alt="" class="logo"  width="120" height="120">
                         </a>
                     </div>
@@ -87,7 +87,7 @@ a {
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#about"></a>
-                              <form class="navbar-form navbar-left" action="searchfuncName.php" method="get" id="indexSearch">
+                            <form class="navbar-form navbar-left" action="searchfuncName.php" method="get" id="indexSearch">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="searchterm" placeholder="함수를 입력하세요.">
                                 </div>

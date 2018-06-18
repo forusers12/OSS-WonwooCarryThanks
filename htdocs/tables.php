@@ -25,7 +25,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">'C' Library Academy</a>
+    <a class="navbar-brand" href="index.php">'C' Library Academy</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,18 +37,12 @@
 											$head = $row["head"];
 					 ?>
 					 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-						 <a class="nav-link" href="lectureHn.php?head=<?php echo $head; ?>">
+						 <a class="nav-link" href="tables.php?head=<?php echo $head; ?>">
 							 <i class="fa fa-fw fa-table"></i>
 							 <span class="nav-link-text"><?php echo $head;?></span>
 						 </a>
 					 </li>
 				 <?php } ?>
-				 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-				   <a class="nav-link" href="tables.php">
-				     <i class="fa fa-fw fa-table"></i>
-				     <span class="nav-link-text">Tables</span>
-				   </a>
-				 </li>
       </ul>
 
       <ul class="navbar-nav sidenav-toggler">
@@ -117,7 +111,7 @@
 									 <tr>
 								 <td><?php echo $funcName;?></a></td>
 								 <td><?php echo $beginEx ?></td>
-								 <td><a href="board/read.php?funcName=<?php echo $funcName; ?>">보기</td>
+								 <td><a href="viewFunc.php?funcName=<?php echo $funcName; ?>">보기</td>
 							 </tr>
                <?php } ?>
 							 </tbody>
