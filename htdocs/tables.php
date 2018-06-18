@@ -55,16 +55,14 @@
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchfuncName.php" method="get" id="indexSearch">
             <div class="input-group">
-              <form class="navbar-form navbar-left" action="searchfuncName.php" method="get" id="indexSearch">
               <input class="form-control" type="text" name="searchterm"  placeholder="Search for...">
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary" type="button">
                   <i class="fa fa-search"></i>
                 </button>
               </span>
-            </form>
             </div>
           </form>
         </li>

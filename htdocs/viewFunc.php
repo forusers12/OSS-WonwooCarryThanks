@@ -59,16 +59,14 @@
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchfuncName.php" method="get" id="indexSearch">
             <div class="input-group">
-              <form class="navbar-form navbar-left" action="searchfuncName.php" method="get" id="indexSearch">
               <input class="form-control" type="text" name="searchterm"  placeholder="Search for...">
               <span class="input-group-append">
                 <button type="submit" class="btn btn-primary" type="button">
                   <i class="fa fa-search"></i>
                 </button>
               </span>
-            </form>
             </div>
           </form>
         </li>
@@ -92,11 +90,13 @@
 <p class="text-md-left"><?php echo $board['beginExplain'];?></p>
 <p></p>
 <h5>입력 매개변수 리스트</h5>
-<p class="text-md-left">간단한 설명</p>
+<p class="text-md-left"><?php echo $board['parameter'];?></p>
 
 <p></p>
 <h5>반환값</h5>
-<p class="text-md-left">간단한 설명</p>
+<p class="text-md-left"><?php echo $board['returnValue'];?></p>
+<p></p>
+<p class="text-md-left"><?php echo $board['returnValue2'];?></p>
 
 <p></p>
 <h5>사용 예</h5>
