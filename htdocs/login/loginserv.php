@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
        header("Location: ../managerFunc.php");
      }
      else{
-       header("Location: ../index_session.html"); //로그인 성공 페이지로 이동
+       header("Location: ../index.php"); //로그인 성공 페이지로 이동
      }
 
    }

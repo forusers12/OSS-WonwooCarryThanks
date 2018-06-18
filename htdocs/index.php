@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+<!-- -->
+
 <!doctype html>
 <!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
 <!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
@@ -90,14 +95,28 @@ a {
                             </form>
                             </li>
 
+                            <?php
+                            if(isset($_SESSION['id'])){
+                            echo'<li ><a href="tables.php?head=stdio.h" id="nav1">C</a>';
+                            echo'</li>';
+                            echo'<li><a href="" id="nav2">';
+                            echo $_SESSION['id'];
+                            echo '  님</a>';
+                            echo'</li>';
+                            echo'<li><a href="./login/logout.php" id="nav3">로그아웃</a>';
+                            echo'</li>';
+                            }
 
-                            <li ><a href="tables.php?head=stdio.h" id="nav1">C</a>
-                            </li>
-                            <li><a href="login.html" id="nav2">로그인</a>
-                            </li>
-                            <li><a href="register.html" id="nav3">회원가입</a>
-                            </li>
+                            else{
+                              echo'<li ><a href="tables.php?head=stdio.h" id="nav1">C</a>';
+                              echo'</li>';
+                              echo'<li><a href="login.html" id="nav2">로그인</a>';
+                              echo'</li>';
+                              echo'<li><a href="register.html" id="nav3">회원가입</a>';
+                              echo'</li>';
+                            }
 
+                            ?>
 
                         </ul>
                     </div>
