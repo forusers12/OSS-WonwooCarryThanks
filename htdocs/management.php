@@ -82,38 +82,23 @@
       <input type="text" id="funcName" name="funcName"required><br>
       <label for="head">헤더이름</label>
       <input type="text" id="head" name="head"><br>
-      <label for="beginExplain">초급자 설명</label>
+      <label for="beginExplain">기초 설명</label>
       <input type="text" id="beginExplain" name="beginExplain"><br>
-      <label for="mediumExplain">중급자 설명</label>
-      <input type="text" id="mediumExplain" name="mediumExplain"><br>
-      <label for="highExplain">고급자 설명</label>
-      <input type="text" id="highExplain" name="highExplain"><br>
+      <label for="parameter">입력 매개변수 리스트</label>
+      <input type="text" id="parameter" name="parameter"><br>
+      <label for="returnValue">반환값</label>
+      <input type="text" id="returnValue" name="returnValue"><br>
+      <label for="returnValue2">반환값2</label>
+      <input type="text" id="returnValue2" name="returnValue2"><br>
 
-      <label for="beginPic2">초급자 실행사진1</label>
+      <label for="exPic">예제 사진</label>
 
-      <input type="file" id="beginPic2" name="beginPic2"><br>
+      <input type="file" id="exPic" name="exPic"><br>
 
 
 
-      <label for="mediumPic1">중급자 실행사진1</label>
-      <input type="file" id="mediumPic1" name="mediumPic1"><br>
-
-      <label for="highPic1">고급자 실행사진1</label>
-      <input type="file" id="highPic1" name="highPic1"><br>
-
-      <label for="beginEx">초급자 예제</label>
-      <input type="text" id="beginEx" name="beginEx"><br>
-      <label for="beginRe">초급자 예제 결과</label>
-      <input type="text" id="beginRe" name="beginRe"><br>
-      <label for="mediumEx">중급자 예제</label>
-      <input type="text" id="mediumEx" name="mediumEx"><br>
-      <label for="mediumRe">중급자 예제 결과</label>
-      <input type="text" id="mediumRe" name="mediumRe"><br>
-      <label for="highEx">고급자 예제</label>
-      <input type="text" id="highEx" name="highEx"><br>
-      <label for="highRe">고급자 예제 결과</label>
-      <input type="text" id="highRe" name="highRe"><br>
-
+      <label for="printPic">결과 사진</label>
+      <input type="file" id="printPic" name="printPic"><br>
 
       <br><br>
       <input type="submit" value="확인">

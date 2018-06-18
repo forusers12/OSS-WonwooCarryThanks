@@ -6,10 +6,10 @@ header('Content-Type: text/html; charset=utf-8');
 	$bno = $_GET['funcName'];
 	$sql = mq("select * from function where funcName='".$bno."'");
 	$board = $sql->fetch_array();
-	$src = $board['beginPic1'];
-$beginpic = $board['beginPic2'];
-$mediumpic = $board['mediumPic1'];
-$highpic = $board['highPic1'];
+	$src = $board['route'];
+$beginpic = $board['exPic'];
+$mediumpic = $board['printPic'];
+
 	?>
 <!doctype html>
 <html lang="ko">
@@ -36,11 +36,11 @@ $highpic = $board['highPic1'];
 </ul>
 <ul>
 	<li class="read_nl fl">중급자 설명</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[mediumExplain]"); ?></li>
+	<li class="read_nl_con"><?php echo nl2br("$board[parameter]"); ?></li>
 </ul>
 <ul>
 	<li class="read_nl fl">고급자 설명</li>
-	<li class="read_nl_con"><?php echo nl2br("$board[highExplain]"); ?></li>
+	<li class="read_nl_con"><?php echo nl2br("$board[returnValue]"); ?></li>
 </ul>
 <ul>
 	<li class="read_nl fl">초급자 실행사진</li>

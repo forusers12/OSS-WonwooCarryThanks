@@ -12,34 +12,26 @@ if(!$connect){
 }
 $uploads_dir = 'uploads/';
 
-$source = $_FILES['beginPic2']['tmp_name'];
-$dest = basename($_FILES['beginPic2']['name']);
+$source = $_FILES['exPic']['tmp_name'];
+$dest = basename($_FILES['exPic']['name']);
 move_uploaded_file($source, "$uploads_dir/$dest");
 
-$source_m = $_FILES['mediumPic1']['tmp_name'];
-$dest_m = basename($_FILES['mediumPic1']['name']);
+$source_m = $_FILES['printPic']['tmp_name'];
+$dest_m = basename($_FILES['printPic']['name']);
 move_uploaded_file($source_m, "$uploads_dir/$dest_m");
 
-$source_h = $_FILES['highPic1']['tmp_name'];
-$dest_h = basename($_FILES['highPic1']['name']);
-move_uploaded_file($source_h, "$uploads_dir/$dest_h");
 
-
-$data_stream = "'".$_POST['funcName']."','".$_POST['head']."','".$_POST['beginExplain']."','".$_POST['mediumExplain']."','".$_POST['highExplain']."','".$uploads_dir."','".$dest."','".$dest_m."','".$dest_h."','".$_POST['beginEx']."','".$_POST['beginRe']."','".$_POST['mediumEx']."','".$_POST['mediumRe']."','".$_POST['highEx']."','".$_POST['highRe']."'";
+$data_stream = "'".$_POST['funcName']."','".$_POST['head']."','".$_POST['beginExplain']."','".$_POST['parameter']."','".$_POST['returnValue']."','".$_POST['returnValue2']"','".$uploads_dir."','".$dest."','".$dest_m."'";
 
 $fName = $_POST['funcName'];
 $hName = $_POST['head'];
 $beName = $_POST['beginExplain'];
-$meName = $_POST['mediumExplain'];
-$heName = $_POST['highExplain'];
-$bexName = $_POST['beginEx'];
-$berName = $_POST['beginRe'];
-$mexName = $_POST['mediumEx'];
-$merName = $_POST['mediumRe'];
-$hixName = $_POST['highEx'];
-$hirName = $_POST['highRe'];
+$paraName = $_POST['parameter'];
+$rv1Name = $_POST['returnValue'];
+$rv2Name = $_POST['returnValue2'];
 
-$query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `mediumExplain`, `highExplain`, `beginPic1`, `beginPic2`, `mediumPic1`, `highPic1`, `beginEx`, `beginRe`, `mediumEx`, `mediumRe`, `highEx`, `highRe`) VALUES (".$data_stream.") ON DUPLICATE KEY UPDATE funcName='$fName', head='$hName', beginExplain='$beName', mediumExplain='$meName', highExplain='$heName', beginPic1='$uploads_dir', beginPic2='$dest', mediumPic1='$dest_m', highPic1='$dest_h', beginEx='$bexName', beginRe='$berName', mediumEx='$mexName', mediumRe='$merName', highEx='$hixName', highRe='$hirName'";
+
+$query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `parameter`, `returnValue`, `returnValue2`, `route`, `exPic`, `printPic`) VALUES (".$data_stream.") ON DUPLICATE KEY UPDATE funcName='$fName', head='$hName', beginExplain='$beName', parameter='$paraName', returnValue='$rv1Name', returnValue2='$rv2Name', route='$uploads_dir', exPic='$dest', printPic='$dest_m'";
 
   $result = mysqli_query($connect, $query);
 

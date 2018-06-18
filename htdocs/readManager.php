@@ -7,10 +7,10 @@ header('Content-Type: text/html; charset=utf-8');
 	$sql = mq("select * from function where funcName='".$bno."'");
 	$board = $sql->fetch_array();
   $funcName = $board['funcName'];
-	$src = $board['beginPic1'];
-$beginpic = $board['beginPic2'];
-$mediumpic = $board['mediumPic1'];
-$highpic = $board['highPic1'];
+	$src = $board['route'];
+$exPic = $board['exPic'];
+$printPic = $board['printPic'];
+
 	?>
 <!doctype html>
 <html lang="ko">
@@ -36,57 +36,30 @@ $highpic = $board['highPic1'];
 
 
 
-  <label for="beginExplain">초급자 설명</label>
+  <label for="beginExplain">기초 설명</label>
   <input type="text" id="beginExplain" name="beginExplain" value="<?php echo nl2br("$board[beginExplain]"); ?>"><br>
 
 
-  <label for="mediumExplain">중급자 설명</label>
-  <input type="text" id="mediumExplain" name="mediumExplain" value="<?php echo nl2br("$board[mediumExplain]"); ?>"><br>
+  <label for="parameter">입력 매개변수 리스트</label>
+  <input type="text" id="parameter" name="parameter" value="<?php echo nl2br("$board[parameter]"); ?>"><br>
 
 
-  <label for="highExplain">고급자 설명</label>
-  <input type="text" id="highExplain" name="highExplain" value="<?php echo nl2br("$board[highExplain]"); ?>"><br>
+  <label for="returnValue">반환값</label>
+  <input type="text" id="returnValue" name="returnValue" value="<?php echo nl2br("$board[returnValue]"); ?>"><br>
+	<label for="returnValue2">반환값2</label>
+	<input type="text" id="returnValue2" name="returnValue2" value="<?php echo nl2br("$board[returnValue2]"); ?>"><br>
 
 
-  <label for="beginPic2">초급자 실행사진1</label>
+  <label for="exPic">예제 사진</label>
 
-  <input type="file" id="beginPic2" name="beginPic2"><br>
-	<?php echo "<img src = $src$beginpic>"?><br>
-
-
-	<label for="mediumPic1">중급자 실행사진1</label>
-	<input type="file" id="mediumPic1" name="mediumPic1"><br>
-
-	<?php echo "<img src = $src$mediumpic>"?><br>
+  <input type="file" id="exPic" name="exPic"><br>
+	<?php echo "<img src = $src$exPic>"?><br>
 
 
-	<label for="highPic1">고급자 실행사진1</label>
-	<input type="file" id="highPic1" name="highPic1"><br>
+	<label for="printPic">결과 사진</label>
+	<input type="file" id="printPic" name="printPic"><br>
 
-	<?php echo "<img src = $src$highpic>"?><br>
-
-	<label for="beginEx">초급자 예제</label>
-	<input type="text" id="beginEx" name="beginEx" value="<?php echo nl2br("$board[beginEx]"); ?>"><br>
-
-
-	<label for="beginRe">초급자 예제 결과</label>
-	<input type="text" id="beginRe" name="beginRe" value="<?php echo nl2br("$board[beginRe]"); ?>"><br>
-
-
-	<label for="mediumEx">중급자 예제</label>
-	<input type="text" id="mediumEx" name="mediumEx" value="<?php echo nl2br("$board[mediumEx]"); ?>"><br>
-
-
-	<label for="mediumRe">중급자 예제 결과</label>
-	<input type="text" id="mediumRe" name="mediumRe" value="<?php echo nl2br("$board[mediumRe]"); ?>"><br>
-
-
-	<label for="highEx">고급자 예제</label>
-	<input type="text" id="highEx" name="highEx" value="<?php echo nl2br("$board[highEx]"); ?>"><br>
-
-
-	<label for="highRe">고급자 예제 결과</label>
-	<input type="text" id="highRe" name="highRe" value="<?php echo nl2br("$board[highRe]"); ?>"><br>
+	<?php echo "<img src = $src$printPic>"?><br>
 
 	<br><br>
 	<input type="submit" value="수정확인">
