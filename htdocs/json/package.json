@@ -2,11 +2,7 @@
   "name": "Oleose",
   "version": "0.1.0",
   "description": "Mobile App One Page Landing Template",
-<<<<<<< HEAD
   "main": "index.php",
-=======
-  "main": "index.html",
->>>>>>> fc35d52bf7af8bfa26a4db6a60f2ffc1fbc9f8c3
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-less": "~1.0.0"
