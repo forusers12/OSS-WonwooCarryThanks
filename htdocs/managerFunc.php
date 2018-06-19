@@ -67,6 +67,9 @@
                   <i class="fa fa-search"></i>
                 </button>
 <<<<<<< HEAD
+              </span>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
               </span>
 =======
@@ -105,6 +108,7 @@
                     </li>
                 </ul>
 >>>>>>> 7429b74a842875cb21ccf8cf314f11f539fee443
+>>>>>>> 7a719516cd3b535c55a46c11fdd297da5e5269bc
             </div>
           </form>
         </li>
@@ -115,6 +119,9 @@
       </ul>
     </div>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7a719516cd3b535c55a46c11fdd297da5e5269bc
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
@@ -215,6 +222,8 @@
 			</body>
 
 			</html>
+<<<<<<< HEAD
+=======
 =======
 
      <table class="list-table">
@@ -307,3 +316,4 @@
 
 </html>
 >>>>>>> 7429b74a842875cb21ccf8cf314f11f539fee443
+>>>>>>> 7a719516cd3b535c55a46c11fdd297da5e5269bc
