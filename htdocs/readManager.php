@@ -41,7 +41,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 				<?php
-				$sql = mq("select distinct head from function");
+				$sql = mq("select distinct head from function order by head");
 										while( $row = $sql->fetch_array()) {
 											$head = $row["head"];
 					 ?>
@@ -152,19 +152,15 @@
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
 			    <div class="modal-header">
-			      <h5 class="modal-title" id="exampleModalLabel">로그아웃 하시겠습니까?</h5>
+			      <h5 class="modal-title" id="exampleModalLabel">로그아웃</h5>
 			      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
 			        <span aria-hidden="true">×</span>
 			      </button>
 			    </div>
-			    <div class="modal-body">로그아웃이 되었습니다.</div>
+			    <div class="modal-body">로그아웃 하시겠습니까?</div>
 			    <div class="modal-footer">
 			      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-<<<<<<< HEAD
 			      <a class="btn btn-primary" href="./login/logout.php">Logout</a>
-=======
-			      <a class="btn btn-primary" href="login.php">Logout</a>
->>>>>>> b454a7887bde76471ff20a507161adb87db104ca
 			    </div>
 			  </div>
 			</div>

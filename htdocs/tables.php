@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 				<?php
-				$sql = mq("select distinct head from function");
+				$sql = mq("select distinct head from function order by head");
 										while( $row = $sql->fetch_array()) {
 											$head = $row["head"];
 					 ?>
@@ -78,7 +78,7 @@
 
             }
             else{
-              echo'<li><a class="nav-link" href="login.php" id="nav2">로그인</a>';
+              echo'<li><a class="nav-link" href="login.html" id="nav2">로그인</a>';
               echo'</li>';
 
             }
@@ -105,13 +105,6 @@
 			            <th>자세히보기</th>
 			          </tr>
 			        </thead>
-			        <tfoot>
-			          <tr>
-			            <th>함수명</th>
-			            <th>기초설명</th>
-			            <th>자세히보기</th>
-			          </tr>
-			        </tfoot>
 								 <tbody>
                    <?php
      							$sql = mq("select * from function where head ='$bno'");

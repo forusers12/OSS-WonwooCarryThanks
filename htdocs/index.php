@@ -110,7 +110,7 @@ a {
                             else{
                               echo'<li ><a href="tables.php?head=stdio.h" id="nav1">C</a>';
                               echo'</li>';
-                              echo'<li><a href="login.php" id="nav2">로그인</a>';
+                              echo'<li><a href="login.html" id="nav2">로그인</a>';
                               echo'</li>';
                               echo'<li><a href="register.html" id="nav3">회원가입</a>';
                               echo'</li>';

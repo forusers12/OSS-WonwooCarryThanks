@@ -37,16 +37,18 @@ $query = "INSERT INTO `function`(`funcName`, `head`, `beginExplain`, `parameter`
 
 if($result)
 {
-  echo '성공';
+  //echo '성공';
 }
 else {
-  echo '실패';
+  //echo '실패';
 }
 
 mysqli_close($connect);
 
 
-echo ('입력이 완료되었습니다.');
-echo("<meta http-equiv='Refresh' content='2; URL=managerFunc.php'>");
+
+
+echo("<meta http-equiv='Refresh' content='0; URL=managerFunc.php?head=stdio.h'>");
+echo "<script> alert('입력이 완료되었습니다.');</script>";
 
 ?>

@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$db = new mysqli("localhost", "root", "111111", "academy");
+$db = new mysqli("localhost:3306", "root", "111111", "academy");
 $db->set_charset("utf8");
 
-$host="localhost";
+$host="localhost:3306";
 $dbid="root";
 $dbpw="111111";
 $dbname="academy";
