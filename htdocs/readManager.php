@@ -126,7 +126,7 @@
 
 				<input type="submit" value="수정확인">
 				<input type="reset" value="취소">
-			  <button type="button" onclick="location.href='./managerFunc.php'" >목록으로	</button>
+			  <button type="button" onclick="location.href='managerFunc.php?head=stdio.h'" >목록으로	</button>
 				<button type="button" onclick="location.href='delDB.php?funcName=<?php echo $funcName; ?>'" >삭제	</button>
 
 			</form>
@@ -152,15 +152,15 @@
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
 			    <div class="modal-header">
-			      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+			      <h5 class="modal-title" id="exampleModalLabel">로그아웃 하시겠습니까?</h5>
 			      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
 			        <span aria-hidden="true">×</span>
 			      </button>
 			    </div>
-			    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			    <div class="modal-body">로그아웃이 되었습니다.</div>
 			    <div class="modal-footer">
 			      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-			      <a class="btn btn-primary" href="login.html">Logout</a>
+			      <a class="btn btn-primary" href="./login/logout.php">Logout</a>
 			    </div>
 			  </div>
 			</div>

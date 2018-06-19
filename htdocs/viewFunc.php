@@ -6,10 +6,9 @@
   	$board = $sql->fetch_array();
   	$src = $board['route'];
 
-		$funcName = $board['funcName'];
-		$exPic = $board['exPic'];
-		$printPic = $board['printPic'];
-
+    $funcName = $board['funcName'];
+    $exPic = $board['exPic'];
+    $printPic = $board['printPic'];
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -64,7 +63,7 @@
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchName.php" method="get" id="indexSearch">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2" action="searchfuncName.php" method="get" id="indexSearch">
             <div class="input-group">
               <input class="form-control" type="text" name="searchterm"  placeholder="Search for...">
               <span class="input-group-append">
@@ -101,11 +100,10 @@
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 			  <div class="card-body">
-			
-            <h3>함수명 <?php echo $board['funcName'];?></h3>
-         <h5>헤더 <?php echo $board['head'];?></h5>
-         <div class="progress" style="height: 1px;">
- <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          <h3>함수명 <?php echo $board['funcName'];?></h3>
+          <h5>헤더 <?php echo $board['head'];?></h5>
+          <div class="progress" style="height: 1px;">
+  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 <p class="text-md-left"><?php echo $board['beginExplain'];?></p>
 <p></p>
@@ -118,24 +116,13 @@
 <p></p>
 <p class="text-md-left"><?php echo $board['returnValue2'];?></p>
 
-			<label for="exPic">예제 사진</label> <br>
+<p></p>
+<h5>사용 예</h5>
+<p class="text-md-left"><?php echo "<img src = $src$exPic>"?></p>
 
-
-				<?php echo "<img src = $src$exPic>"?><br>
-
-
-				<label for="printPic">결과 사진</label> <br>
-
-				<?php echo "<img src = $src$printPic>"?><br>
-
-				<br><br>
-
-
-			  <button type="button" onclick="location.href='tables.php?head=stdio.h'" >목록으로	</button>
-
-
-			</form>
-			  </form>
+<p></p>
+<h5>출력</h5>
+<p class="text-md-left"><?php echo "<img src = $src$printPic>"?></p>
 			  </div>
 			</div>
 			</div>
@@ -144,7 +131,7 @@
 			<footer class="sticky-footer">
 			<div class="container">
 			  <div class="text-center">
-			    <small>Copyright © Your Website 2018</small>
+			    <small>Copyright ⓒ Your Website 2018</small>
 			  </div>
 			</div>
 			</footer>

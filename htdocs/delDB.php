@@ -9,7 +9,7 @@ if(!$connect){
    //echo '[연결성공]';
 }
 $bno = $_GET['funcName'];
-echo $bno;
+
 $sql = "DELETE FROM `function` WHERE funcName='$bno'";
 
 $result = mysqli_query($connect, $sql);
@@ -30,5 +30,5 @@ mysqli_close($connect);
 
 ?>
 <center>
-<meta http-equiv='Refresh' content='0; URL=managerFunc.php'>
-<FONT size=2 >삭제되었습니다.</font>
+<meta http-equiv='Refresh' content='0;  URL=managerFunc.php?head=stdio.h'>
+<script> alert('삭제가 완료되었습니다.');</script>
