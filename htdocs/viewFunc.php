@@ -84,7 +84,7 @@
 
             }
             else{
-              echo'<li><a class="nav-link" href="login.html" id="nav2">로그인</a>';
+              echo'<li><a class="nav-link" href="login.php" id="nav2">로그인</a>';
               echo'</li>';
 
             }
@@ -100,10 +100,18 @@
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 			  <div class="card-body">
+<<<<<<< HEAD
           <h3>함수명 <?php echo $board['funcName'];?></h3>
           <h5>헤더 <?php echo $board['head'];?></h5>
           <div class="progress" style="height: 1px;">
   <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+=======
+
+            <h3>함수명 <?php echo $board['funcName'];?></h3>
+         <h5>헤더 <?php echo $board['head'];?></h5>
+         <div class="progress" style="height: 1px;">
+ <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+>>>>>>> b454a7887bde76471ff20a507161adb87db104ca
 </div>
 <p class="text-md-left"><?php echo $board['beginExplain'];?></p>
 <p></p>

@@ -207,7 +207,11 @@
 			    <div class="modal-body">로그아웃이 되었습니다.</div>
 			    <div class="modal-footer">
 			      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<<<<<<< HEAD
 			      <a class="btn btn-primary" href="./login/logout.php">Logout</a>
+=======
+			      <a class="btn btn-primary" href="login.php">Logout</a>
+>>>>>>> b454a7887bde76471ff20a507161adb87db104ca
 			    </div>
 			  </div>
 			</div>
