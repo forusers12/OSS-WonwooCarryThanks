@@ -35,11 +35,9 @@ if(isset($_POST['submit'])){
    $_SESSION['id'] = $id; //세션 변수를 만들기
    if(isset($_SESSION['id'])){ // 세션변수가 참이면
      if($adminCheck==1){
-<<<<<<< HEAD
        header("Location: ../managerFunc.php?head=stdio.h");
-=======
        header("Location: ../tables.php?head=stdio.h");
->>>>>>> fc230185ae5a296f872109dcc7aa81bca51b41d8
+
      }
      else{
        header("Location: ../index.php"); //로그인 성공 페이지로 이동
