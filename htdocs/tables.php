@@ -78,7 +78,7 @@
 
             }
             else{
-              echo'<li><a class="nav-link" href="login.html" id="nav2">로그인</a>';
+              echo'<li><a class="nav-link" href="login.php" id="nav2">로그인</a>';
               echo'</li>';
 
             }
