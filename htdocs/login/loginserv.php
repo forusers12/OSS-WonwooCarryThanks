@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
  $mysql_username = 'root';
  $mysql_password = '111111';
  $mysql_database = 'academy';
- $mysql_port = '3306';
+ $mysql_port = '3307';
  $mysql_charset = 'utf8';
  $conn = new mysqli($mysql_hostname, $mysql_username,
  $mysql_password, $mysql_database, $mysql_port);
@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
    $_SESSION['id'] = $id; //세션 변수를 만들기
    if(isset($_SESSION['id'])){ // 세션변수가 참이면
      if($adminCheck==1){
-       header("Location: ../managerFunc.php");
+       header("Location: ../tables.php?head=stdio.h");
      }
      else{
        header("Location: ../index.php"); //로그인 성공 페이지로 이동
